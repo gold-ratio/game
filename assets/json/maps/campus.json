@@ -1,0 +1,167 @@
+{
+  "id": "campus",
+  "name": "校园",
+  "backgroundColor": "#2f7d4f",
+  "world": {
+    "width": 2200,
+    "height": 1600
+  },
+  "spawns": {
+    "default": {
+      "x": 760,
+      "y": 620
+    },
+    "from-dorm": {
+      "x": 360,
+      "y": 430
+    },
+    "from-classroom": {
+      "x": 1120,
+      "y": 430
+    },
+    "from-library": {
+      "x": 1760,
+      "y": 920
+    },
+    "from-cafeteria": {
+      "x": 650,
+      "y": 1320
+    },
+    "from-stadium": {
+      "x": 1540,
+      "y": 1360
+    }
+  },
+  "obstacles": [
+    {
+      "id": "dorm-placeholder",
+      "name": "宿舍占位",
+      "x": 360,
+      "y": 300,
+      "width": 340,
+      "height": 220,
+      "color": "#8fc7ff"
+    },
+    {
+      "id": "classroom-placeholder",
+      "name": "教室占位",
+      "x": 1120,
+      "y": 300,
+      "width": 380,
+      "height": 230,
+      "color": "#f3df85"
+    },
+    {
+      "id": "library-placeholder",
+      "name": "图书馆占位",
+      "x": 1760,
+      "y": 780,
+      "width": 360,
+      "height": 300,
+      "color": "#b9bec8"
+    },
+    {
+      "id": "cafeteria-placeholder",
+      "name": "食堂占位",
+      "x": 650,
+      "y": 1180,
+      "width": 380,
+      "height": 240,
+      "color": "#f2a14a"
+    },
+    {
+      "id": "stadium-placeholder",
+      "name": "体育场占位",
+      "x": 1540,
+      "y": 1240,
+      "width": 520,
+      "height": 260,
+      "color": "#1d5f3c"
+    },
+    {
+      "id": "central-lawn",
+      "name": "中央草坪占位",
+      "x": 1080,
+      "y": 820,
+      "width": 420,
+      "height": 260,
+      "color": "#3f9a62"
+    },
+    {
+      "id": "notice-board",
+      "name": "公告栏占位",
+      "x": 780,
+      "y": 760,
+      "width": 120,
+      "height": 60,
+      "color": "#6b4f2a"
+    },
+    {
+      "id": "express-station",
+      "name": "快递站占位",
+      "x": 360,
+      "y": 940,
+      "width": 220,
+      "height": 120,
+      "color": "#3aa6b9"
+    }
+  ],
+  "doors": [
+    {
+      "id": "to-dorm",
+      "label": "宿舍",
+      "x": 360,
+      "y": 440,
+      "width": 110,
+      "height": 44,
+      "color": "#ffffff",
+      "targetScene": "DormScene",
+      "targetSpawn": "from-campus"
+    },
+    {
+      "id": "to-classroom",
+      "label": "教室",
+      "x": 1120,
+      "y": 450,
+      "width": 110,
+      "height": 44,
+      "color": "#ffffff",
+      "targetScene": "ClassroomScene",
+      "targetSpawn": "from-campus"
+    },
+    {
+      "id": "to-library",
+      "label": "图书馆",
+      "x": 1760,
+      "y": 920,
+      "width": 120,
+      "height": 44,
+      "color": "#ffffff",
+      "targetScene": "LibraryScene",
+      "targetSpawn": "from-campus"
+    },
+    {
+      "id": "to-cafeteria",
+      "label": "食堂",
+      "x": 650,
+      "y": 1320,
+      "width": 110,
+      "height": 44,
+      "color": "#ffffff",
+      "targetScene": "CafeteriaScene",
+      "targetSpawn": "from-campus"
+    },
+    {
+      "id": "to-stadium",
+      "label": "体育场",
+      "x": 1540,
+      "y": 1360,
+      "width": 120,
+      "height": 44,
+      "color": "#ffffff",
+      "targetScene": "StadiumScene",
+      "targetSpawn": "from-campus"
+    }
+  ],
+  "description": "扩展后的校园地图，占位建筑更分散，并增加中央草坪、公告栏、快递站等区域。"
+}

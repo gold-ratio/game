@@ -1,0 +1,144 @@
+{
+  "location": "classroom",
+  "events": [
+    {
+      "id": "classroom_pop_quiz",
+      "title": "随堂小测",
+      "location": "classroom",
+      "condition": {},
+      "description": "老师突然宣布进行一次小测，题目不算难，但需要集中注意力。",
+      "choices": [
+        {
+          "text": "认真作答",
+          "effects": {
+            "knowledge": 8,
+            "energy": -8,
+            "mood": -2
+          },
+          "next_event": null
+        },
+        {
+          "text": "凭直觉快速完成",
+          "effects": {
+            "knowledge": 3,
+            "energy": -3,
+            "mood": 1
+          },
+          "next_event": null
+        }
+      ],
+      "effects": {},
+      "next_event": null,
+      "weight": 1,
+      "periodWeights": {
+        "上午": 0.35,
+        "下午": 0.3,
+        "晚上": 0.1
+      }
+    },
+    {
+      "id": "classroom_group_discussion",
+      "title": "课堂讨论",
+      "location": "classroom",
+      "condition": {},
+      "description": "老师安排小组讨论，要求每个人都说出自己的观点。",
+      "choices": [
+        {
+          "text": "主动发言",
+          "effects": {
+            "knowledge": 4,
+            "relationship": 5,
+            "energy": -4
+          },
+          "next_event": null
+        },
+        {
+          "text": "认真记录",
+          "effects": {
+            "knowledge": 5,
+            "relationship": 1,
+            "energy": -2
+          },
+          "next_event": null
+        }
+      ],
+      "effects": {},
+      "next_event": null,
+      "weight": 1,
+      "periodWeights": {
+        "上午": 0.25,
+        "下午": 0.3,
+        "晚上": 0.15
+      }
+    },
+    {
+      "id": "classroom_after_class_question",
+      "title": "课后提问",
+      "location": "classroom",
+      "condition": {},
+      "description": "下课后老师还留在讲台边，你可以趁机问问题。",
+      "choices": [
+        {
+          "text": "上前提问",
+          "effects": {
+            "knowledge": 7,
+            "mood": 2,
+            "energy": -3
+          },
+          "next_event": null
+        },
+        {
+          "text": "回去自己查资料",
+          "effects": {
+            "knowledge": 3,
+            "energy": -1
+          },
+          "next_event": null
+        }
+      ],
+      "effects": {},
+      "next_event": null,
+      "weight": 1,
+      "periodWeights": {
+        "上午": 0.25,
+        "下午": 0.25,
+        "晚上": 0.25
+      }
+    },
+    {
+      "id": "classroom_evening_self_study",
+      "title": "晚自习",
+      "location": "classroom",
+      "condition": {},
+      "description": "晚上的教室很安静，适合把白天没听懂的内容补上。",
+      "choices": [
+        {
+          "text": "专注自习",
+          "effects": {
+            "knowledge": 9,
+            "energy": -9,
+            "mood": 1
+          },
+          "next_event": null
+        },
+        {
+          "text": "整理笔记",
+          "effects": {
+            "knowledge": 5,
+            "energy": -4,
+            "mood": 2
+          },
+          "next_event": null
+        }
+      ],
+      "effects": {},
+      "next_event": null,
+      "weight": 1,
+      "periodWeights": {
+        "上午": 0.05,
+        "下午": 0.05,
+        "晚上": 0.6
+      }
+    }
+  ]
+}

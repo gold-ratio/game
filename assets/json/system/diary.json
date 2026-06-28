@@ -1,0 +1,5 @@
+{
+  "titlePrefix": "今日校园日记",
+  "emptyDayText": "今天没有记录到特别事件，但你仍然在校园里完成了探索。",
+  "storageKey": "campusDiaries"
+}

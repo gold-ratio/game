@@ -1,0 +1,8 @@
+{
+  "title": "存档与设置",
+  "buttons": {
+    "resetGame": "重置状态",
+    "clearDiaries": "清除日记",
+    "close": "继续游戏"
+  }
+}

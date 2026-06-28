@@ -1,0 +1,142 @@
+{
+  "location": "cafeteria",
+  "events": [
+    {
+      "id": "cafeteria_new_combo",
+      "title": "新品套餐",
+      "location": "cafeteria",
+      "condition": {},
+      "description": "食堂今天推出新品套餐，窗口前已经排起了小队。",
+      "choices": [
+        {
+          "text": "购买新品套餐",
+          "effects": {
+            "money": -12,
+            "energy": 12,
+            "mood": 5
+          },
+          "next_event": null
+        },
+        {
+          "text": "选择普通餐",
+          "effects": {
+            "money": -6,
+            "energy": 8,
+            "mood": 1
+          },
+          "next_event": null
+        }
+      ],
+      "effects": {},
+      "next_event": null,
+      "weight": 1,
+      "periodWeights": {
+        "上午": 0.2,
+        "下午": 0.35,
+        "晚上": 0.25
+      }
+    },
+    {
+      "id": "cafeteria_breakfast",
+      "title": "早餐窗口",
+      "location": "cafeteria",
+      "condition": {},
+      "description": "早餐窗口还有热豆浆和包子，赶时间的人不少。",
+      "choices": [
+        {
+          "text": "买一份早餐",
+          "effects": {
+            "money": -5,
+            "energy": 8,
+            "mood": 2
+          },
+          "next_event": null
+        },
+        {
+          "text": "只买豆浆",
+          "effects": {
+            "money": -2,
+            "energy": 3
+          },
+          "next_event": null
+        }
+      ],
+      "effects": {},
+      "next_event": null,
+      "weight": 1,
+      "periodWeights": {
+        "上午": 0.5,
+        "下午": 0.05,
+        "晚上": 0.05
+      }
+    },
+    {
+      "id": "cafeteria_shared_table",
+      "title": "拼桌闲聊",
+      "location": "cafeteria",
+      "condition": {},
+      "description": "高峰期座位紧张，你和几位同学拼了一桌。",
+      "choices": [
+        {
+          "text": "主动聊天",
+          "effects": {
+            "relationship": 5,
+            "mood": 3,
+            "energy": -2
+          },
+          "next_event": null
+        },
+        {
+          "text": "安静吃饭",
+          "effects": {
+            "energy": 4,
+            "mood": 1
+          },
+          "next_event": null
+        }
+      ],
+      "effects": {},
+      "next_event": null,
+      "weight": 1,
+      "periodWeights": {
+        "上午": 0.15,
+        "下午": 0.35,
+        "晚上": 0.25
+      }
+    },
+    {
+      "id": "cafeteria_late_supper",
+      "title": "晚间加餐",
+      "location": "cafeteria",
+      "condition": {},
+      "description": "晚上食堂还有少量窗口开放，你犹豫要不要加餐。",
+      "choices": [
+        {
+          "text": "买点夜宵",
+          "effects": {
+            "money": -8,
+            "energy": 6,
+            "mood": 4
+          },
+          "next_event": null
+        },
+        {
+          "text": "忍住不买",
+          "effects": {
+            "money": 2,
+            "mood": -1
+          },
+          "next_event": null
+        }
+      ],
+      "effects": {},
+      "next_event": null,
+      "weight": 1,
+      "periodWeights": {
+        "上午": 0.15,
+        "下午": 0.25,
+        "晚上": 0.45
+      }
+    }
+  ]
+}

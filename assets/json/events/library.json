@@ -1,0 +1,140 @@
+{
+  "location": "library",
+  "events": [
+    {
+      "id": "library_reference_book",
+      "title": "找到参考书",
+      "location": "library",
+      "condition": {},
+      "description": "你在书架角落发现一本课程相关的参考书。",
+      "choices": [
+        {
+          "text": "坐下认真阅读",
+          "effects": {
+            "knowledge": 10,
+            "energy": -10,
+            "mood": 1
+          },
+          "next_event": null
+        },
+        {
+          "text": "拍照收藏，稍后再看",
+          "effects": {
+            "knowledge": 3,
+            "energy": -2
+          },
+          "next_event": null
+        }
+      ],
+      "effects": {},
+      "next_event": null,
+      "weight": 1,
+      "periodWeights": {
+        "上午": 0.25,
+        "下午": 0.3,
+        "晚上": 0.25
+      }
+    },
+    {
+      "id": "library_quiet_seat",
+      "title": "抢到靠窗座位",
+      "location": "library",
+      "condition": {},
+      "description": "靠窗座位刚好空出来，光线很适合学习。",
+      "choices": [
+        {
+          "text": "坐下学习",
+          "effects": {
+            "knowledge": 7,
+            "energy": -6,
+            "mood": 3
+          },
+          "next_event": null
+        },
+        {
+          "text": "短暂休息",
+          "effects": {
+            "energy": 5,
+            "mood": 4
+          },
+          "next_event": null
+        }
+      ],
+      "effects": {},
+      "next_event": null,
+      "weight": 1,
+      "periodWeights": {
+        "上午": 0.3,
+        "下午": 0.25,
+        "晚上": 0.15
+      }
+    },
+    {
+      "id": "library_search_database",
+      "title": "数据库检索",
+      "location": "library",
+      "condition": {},
+      "description": "管理员推荐你试试图书馆数据库，里面有不少论文资源。",
+      "choices": [
+        {
+          "text": "学习检索方法",
+          "effects": {
+            "knowledge": 6,
+            "energy": -4
+          },
+          "next_event": null
+        },
+        {
+          "text": "先记下入口",
+          "effects": {
+            "knowledge": 2
+          },
+          "next_event": null
+        }
+      ],
+      "effects": {},
+      "next_event": null,
+      "weight": 1,
+      "periodWeights": {
+        "上午": 0.25,
+        "下午": 0.25,
+        "晚上": 0.2
+      }
+    },
+    {
+      "id": "library_evening_focus",
+      "title": "夜间专注",
+      "location": "library",
+      "condition": {},
+      "description": "夜晚的图书馆格外安静，周围都是翻书和敲键盘的声音。",
+      "choices": [
+        {
+          "text": "深度学习",
+          "effects": {
+            "knowledge": 9,
+            "energy": -9,
+            "mood": 2
+          },
+          "next_event": null
+        },
+        {
+          "text": "整理笔记",
+          "effects": {
+            "knowledge": 5,
+            "energy": -4,
+            "mood": 2
+          },
+          "next_event": null
+        }
+      ],
+      "effects": {},
+      "next_event": null,
+      "weight": 1,
+      "periodWeights": {
+        "上午": 0.2,
+        "下午": 0.2,
+        "晚上": 0.4
+      }
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "location": "cafeteria",
+  "npcs": [
+    {
+      "id": "cafeteria_auntie",
+      "name": "食堂阿姨",
+      "x": 480,
+      "y": 210,
+      "color": "#c65f1e",
+      "interactionRange": 95,
+      "spawnRate": {
+        "上午": 0.6,
+        "下午": 0.9,
+        "晚上": 0.75
+      },
+      "size": {
+        "width": 32,
+        "height": 44
+      },
+      "dialogues": [
+        "今天的新品套餐很受欢迎，不过普通餐也很实惠。",
+        "学习忙也要记得按时吃饭。"
+      ]
+    },
+    {
+      "id": "hungry_student",
+      "name": "饥饿同学",
+      "x": 310,
+      "y": 260,
+      "color": "#d94f70",
+      "interactionRange": 80,
+      "spawnRate": {
+        "上午": 0.35,
+        "下午": 0.8,
+        "晚上": 0.65
+      },
+      "size": {
+        "width": 30,
+        "height": 42
+      },
+      "dialogues": [
+        "我已经饿到能吃两份饭了。",
+        "食堂窗口选择太多，有时候也是一种烦恼。"
+      ]
+    },
+    {
+      "id": "budget_student",
+      "name": "省钱同学",
+      "x": 660,
+      "y": 260,
+      "color": "#4ca66a",
+      "interactionRange": 80,
+      "spawnRate": {
+        "上午": 0.45,
+        "下午": 0.65,
+        "晚上": 0.55
+      },
+      "size": {
+        "width": 30,
+        "height": 42
+      },
+      "dialogues": [
+        "普通餐其实性价比很高。",
+        "如果每天省一点，月底就不会太紧张。"
+      ]
+    },
+    {
+      "id": "late_dinner_student",
+      "name": "晚饭同学",
+      "x": 730,
+      "y": 460,
+      "color": "#6f87d8",
+      "interactionRange": 80,
+      "spawnRate": {
+        "上午": 0.1,
+        "下午": 0.25,
+        "晚上": 0.85
+      },
+      "size": {
+        "width": 30,
+        "height": 42
+      },
+      "dialogues": [
+        "晚上来食堂的人少一点，反而很舒服。",
+        "今天总算能慢慢吃一顿饭了。"
+      ]
+    }
+  ]
+}

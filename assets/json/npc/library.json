@@ -1,0 +1,89 @@
+{
+  "location": "library",
+  "npcs": [
+    {
+      "id": "librarian",
+      "name": "图书管理员",
+      "x": 480,
+      "y": 210,
+      "color": "#5f6978",
+      "interactionRange": 95,
+      "spawnRate": {
+        "上午": 0.8,
+        "下午": 0.9,
+        "晚上": 0.65
+      },
+      "size": {
+        "width": 32,
+        "height": 44
+      },
+      "dialogues": [
+        "如果找不到书，可以从课程关键词开始查。",
+        "图书馆安静，但每个人都在和自己的问题对话。"
+      ]
+    },
+    {
+      "id": "quiet_reader",
+      "name": "安静读者",
+      "x": 360,
+      "y": 420,
+      "color": "#7c6ee6",
+      "interactionRange": 75,
+      "spawnRate": {
+        "上午": 0.5,
+        "下午": 0.65,
+        "晚上": 0.75
+      },
+      "size": {
+        "width": 30,
+        "height": 42
+      },
+      "dialogues": [
+        "我喜欢靠窗的位置，光线刚刚好。",
+        "读书的时候，时间会变得慢一点。"
+      ]
+    },
+    {
+      "id": "exam_student",
+      "name": "备考同学",
+      "x": 610,
+      "y": 430,
+      "color": "#d94f70",
+      "interactionRange": 80,
+      "spawnRate": {
+        "上午": 0.4,
+        "下午": 0.75,
+        "晚上": 0.9
+      },
+      "size": {
+        "width": 30,
+        "height": 42
+      },
+      "dialogues": [
+        "考试周还没到，但我已经开始紧张了。",
+        "提前准备一点，至少晚上能睡得安心。"
+      ]
+    },
+    {
+      "id": "paper_student",
+      "name": "论文同学",
+      "x": 760,
+      "y": 250,
+      "color": "#e6a23c",
+      "interactionRange": 80,
+      "spawnRate": {
+        "上午": 0.25,
+        "下午": 0.55,
+        "晚上": 0.8
+      },
+      "size": {
+        "width": 30,
+        "height": 42
+      },
+      "dialogues": [
+        "我刚找到一篇很有用的参考文献。",
+        "写论文最难的是开始，第二难的是别跑题。"
+      ]
+    }
+  ]
+}

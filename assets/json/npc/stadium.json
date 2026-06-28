@@ -1,0 +1,89 @@
+{
+  "location": "stadium",
+  "npcs": [
+    {
+      "id": "coach",
+      "name": "体育老师",
+      "x": 260,
+      "y": 470,
+      "color": "#2a9d65",
+      "interactionRange": 95,
+      "spawnRate": {
+        "上午": 0.75,
+        "下午": 0.8,
+        "晚上": 0.35
+      },
+      "size": {
+        "width": 32,
+        "height": 44
+      },
+      "dialogues": [
+        "运动不用一下子很强，稳定出现就很不错。",
+        "跑累了就走一圈，别把锻炼变成压力。"
+      ]
+    },
+    {
+      "id": "runner",
+      "name": "夜跑同学",
+      "x": 480,
+      "y": 500,
+      "color": "#d94f70",
+      "interactionRange": 85,
+      "spawnRate": {
+        "上午": 0.35,
+        "下午": 0.5,
+        "晚上": 0.9
+      },
+      "size": {
+        "width": 30,
+        "height": 42
+      },
+      "dialogues": [
+        "夜跑的时候风很舒服。",
+        "跑完以后，很多烦心事都会轻一点。"
+      ]
+    },
+    {
+      "id": "basketball_student",
+      "name": "篮球同学",
+      "x": 650,
+      "y": 390,
+      "color": "#e6a23c",
+      "interactionRange": 85,
+      "spawnRate": {
+        "上午": 0.25,
+        "下午": 0.75,
+        "晚上": 0.6
+      },
+      "size": {
+        "width": 30,
+        "height": 42
+      },
+      "dialogues": [
+        "下午打一会儿球，整个人都清醒了。",
+        "要不要投几个篮？不计分，只放松。"
+      ]
+    },
+    {
+      "id": "stretching_student",
+      "name": "拉伸同学",
+      "x": 790,
+      "y": 500,
+      "color": "#6f87d8",
+      "interactionRange": 85,
+      "spawnRate": {
+        "上午": 0.4,
+        "下午": 0.55,
+        "晚上": 0.7
+      },
+      "size": {
+        "width": 30,
+        "height": 42
+      },
+      "dialogues": [
+        "运动前后拉伸一下，第二天会轻松很多。",
+        "身体状态也会影响心情。"
+      ]
+    }
+  ]
+}

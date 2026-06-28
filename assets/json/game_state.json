@@ -1,0 +1,18 @@
+{
+  "day": 1,
+  "periodIndex": 0,
+  "periods": [
+    "上午",
+    "下午",
+    "晚上"
+  ],
+  "currentLocation": "校园",
+  "money": 50,
+  "attributes": {
+    "health": 80,
+    "energy": 80,
+    "knowledge": 20,
+    "mood": 70,
+    "relationship": 30
+  }
+}

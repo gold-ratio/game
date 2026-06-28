@@ -1,0 +1,17 @@
+{
+  "labels": {
+    "location": "地点",
+    "time": "时间",
+    "date": "日期",
+    "money": "金钱",
+    "attributesTitle": "人物属性",
+    "health": "体力",
+    "energy": "精力",
+    "knowledge": "学业",
+    "mood": "心情",
+    "relationship": "社交",
+    "taskTitle": "任务提示"
+  },
+  "defaultTaskHint": "探索校园，进入不同地点。",
+  "defaultEventHint": "靠近门区域后按 E。"
+}

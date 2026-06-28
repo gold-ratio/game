@@ -1,0 +1,38 @@
+{
+  "targetDay": 16,
+  "defaultEndingId": "ordinary_campus_day",
+  "endings": [
+    {
+      "id": "academic_star",
+      "title": "学业闪光的一天",
+      "requirements": {
+        "knowledge": 80
+      },
+      "description": "16 天过去，你已经熟悉了校园节奏。你在课堂和图书馆里积累了稳定的知识，也慢慢找到适合自己的学习方式。新的学期还很长，但你已经不再慌张。"
+    },
+    {
+      "id": "social_connector",
+      "title": "校园连接者",
+      "requirements": {
+        "relationship": 75
+      },
+      "description": "这 16 天里，你认识了许多人。社团、宿舍、课堂和食堂都留下了你的脚步。对你来说，大学不只是地图上的地点，而是一张不断展开的人际网络。"
+    },
+    {
+      "id": "balanced_life",
+      "title": "平衡生活家",
+      "requirements": {
+        "health": 65,
+        "mood": 65,
+        "knowledge": 55
+      },
+      "description": "你没有把自己逼到极限，而是在学习、休息和探索之间找到了平衡。16 天结束时，你带着不错的状态，准备继续迎接新的校园日常。"
+    },
+    {
+      "id": "ordinary_campus_day",
+      "title": "普通但真实的大学生活",
+      "requirements": {},
+      "description": "这 16 天没有惊天动地的大事，却有很多具体的小选择。你吃过食堂的新套餐，走过校园的路，也在不同地点留下了自己的节奏。这就是大学生活开始的样子。"
+    }
+  ]
+}

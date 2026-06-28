@@ -1,0 +1,28 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background: #15171c;
+  color: #f4f7fb;
+  font-family: Arial, "Microsoft YaHei", sans-serif;
+}
+
+body {
+  display: grid;
+  place-items: center;
+}
+
+#game-shell {
+  width: min(100vw, 960px);
+  height: min(100vh, 640px);
+}
+
+#game-root {
+  width: 100%;
+  height: 100%;
+}
+
+canvas {
+  display: block;
+}

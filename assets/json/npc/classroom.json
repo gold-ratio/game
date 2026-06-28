@@ -1,0 +1,110 @@
+{
+  "location": "classroom",
+  "npcs": [
+    {
+      "id": "teacher",
+      "name": "任课老师",
+      "x": 480,
+      "y": 170,
+      "color": "#2b5c8a",
+      "interactionRange": 100,
+      "spawnRate": {
+        "上午": 0.9,
+        "下午": 0.85,
+        "晚上": 0.25
+      },
+      "size": {
+        "width": 32,
+        "height": 44
+      },
+      "dialogues": [
+        "课堂上最重要的是知道自己哪里还不懂。",
+        "如果你愿意多问一个问题，很多难点就会松动。"
+      ]
+    },
+    {
+      "id": "front_row_student",
+      "name": "前排同学",
+      "x": 330,
+      "y": 330,
+      "color": "#d94f70",
+      "interactionRange": 80,
+      "spawnRate": {
+        "上午": 0.75,
+        "下午": 0.65,
+        "晚上": 0.15
+      },
+      "size": {
+        "width": 30,
+        "height": 42
+      },
+      "dialogues": [
+        "我把这节课的重点整理了一下，等会儿可以一起看。",
+        "坐前排有压力，但确实不容易走神。"
+      ]
+    },
+    {
+      "id": "group_partner",
+      "name": "小组同伴",
+      "x": 610,
+      "y": 300,
+      "color": "#e6a23c",
+      "interactionRange": 80,
+      "spawnRate": {
+        "上午": 0.55,
+        "下午": 0.8,
+        "晚上": 0.25
+      },
+      "size": {
+        "width": 30,
+        "height": 42
+      },
+      "dialogues": [
+        "小组作业我们要不要今晚先分工？",
+        "只要别拖到最后一天，其实就不算灾难。"
+      ]
+    },
+    {
+      "id": "late_student",
+      "name": "迟到同学",
+      "x": 780,
+      "y": 500,
+      "color": "#6f87d8",
+      "interactionRange": 80,
+      "spawnRate": {
+        "上午": 0.45,
+        "下午": 0.55,
+        "晚上": 0.2
+      },
+      "size": {
+        "width": 30,
+        "height": 42
+      },
+      "dialogues": [
+        "我真的不是故意迟到，路上人太多了。",
+        "下次我一定提前十分钟出门。"
+      ]
+    },
+    {
+      "id": "review_student",
+      "name": "复习同学",
+      "x": 250,
+      "y": 500,
+      "color": "#4ca66a",
+      "interactionRange": 80,
+      "spawnRate": {
+        "上午": 0.35,
+        "下午": 0.55,
+        "晚上": 0.7
+      },
+      "size": {
+        "width": 30,
+        "height": 42
+      },
+      "dialogues": [
+        "晚上教室很安静，适合把白天没听懂的地方补一补。",
+        "如果你也复习，我们可以互相抽问。"
+      ]
+    }
+  ]
+}

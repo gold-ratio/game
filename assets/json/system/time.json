@@ -1,0 +1,14 @@
+{
+  "advanceOnEventComplete": true,
+  "debugAdvanceKey": "T",
+  "dayEndMessage": "一天结束，进入第二天。",
+  "allowance": {
+    "intervalDays": 4,
+    "amount": 80
+  },
+  "periods": [
+    "上午",
+    "下午",
+    "晚上"
+  ]
+}

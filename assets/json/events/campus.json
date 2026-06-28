@@ -1,0 +1,141 @@
+{
+  "location": "campus",
+  "events": [
+    {
+      "id": "campus_club_poster",
+      "title": "社团招新海报",
+      "location": "campus",
+      "condition": {},
+      "description": "公告栏上贴满了社团招新海报，学术社、摄影社和志愿队都在招人。",
+      "choices": [
+        {
+          "text": "去学术社摊位聊聊",
+          "effects": {
+            "knowledge": 5,
+            "relationship": 3,
+            "energy": -5
+          },
+          "next_event": null
+        },
+        {
+          "text": "参加摄影社校园漫步",
+          "effects": {
+            "mood": 6,
+            "relationship": 4,
+            "energy": -4
+          },
+          "next_event": null
+        }
+      ],
+      "effects": {},
+      "next_event": null,
+      "weight": 1,
+      "periodWeights": {
+        "上午": 0.3,
+        "下午": 0.3,
+        "晚上": 0.1
+      }
+    },
+    {
+      "id": "campus_lost_card",
+      "title": "捡到校园卡",
+      "location": "campus",
+      "condition": {},
+      "description": "你在路边捡到一张校园卡，背面写着失主的名字。",
+      "choices": [
+        {
+          "text": "送到失物招领处",
+          "effects": {
+            "relationship": 6,
+            "mood": 3,
+            "energy": -3
+          },
+          "next_event": null
+        },
+        {
+          "text": "先赶路，稍后处理",
+          "effects": {
+            "mood": -2
+          },
+          "next_event": null
+        }
+      ],
+      "effects": {},
+      "next_event": null,
+      "weight": 1,
+      "periodWeights": {
+        "上午": 0.25,
+        "下午": 0.2,
+        "晚上": 0.2
+      }
+    },
+    {
+      "id": "campus_notice_board",
+      "title": "公告栏新通知",
+      "location": "campus",
+      "condition": {},
+      "description": "公告栏更新了讲座、比赛和志愿活动信息。",
+      "choices": [
+        {
+          "text": "报名学术讲座",
+          "effects": {
+            "knowledge": 6,
+            "energy": -4
+          },
+          "next_event": null
+        },
+        {
+          "text": "报名志愿活动",
+          "effects": {
+            "relationship": 5,
+            "mood": 3,
+            "energy": -4
+          },
+          "next_event": null
+        }
+      ],
+      "effects": {},
+      "next_event": null,
+      "weight": 1,
+      "periodWeights": {
+        "上午": 0.25,
+        "下午": 0.3,
+        "晚上": 0.2
+      }
+    },
+    {
+      "id": "campus_evening_walk",
+      "title": "校园夜路",
+      "location": "campus",
+      "condition": {},
+      "description": "夜晚的校园安静下来，路灯把树影拉得很长。",
+      "choices": [
+        {
+          "text": "慢慢散步",
+          "effects": {
+            "mood": 7,
+            "health": 2,
+            "energy": -3
+          },
+          "next_event": null
+        },
+        {
+          "text": "坐在草坪边发呆",
+          "effects": {
+            "mood": 5,
+            "energy": 2
+          },
+          "next_event": null
+        }
+      ],
+      "effects": {},
+      "next_event": null,
+      "weight": 1,
+      "periodWeights": {
+        "上午": 0.05,
+        "下午": 0.05,
+        "晚上": 0.5
+      }
+    }
+  ]
+}

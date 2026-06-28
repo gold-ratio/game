@@ -1,0 +1,144 @@
+{
+  "location": "dorm",
+  "events": [
+    {
+      "id": "dorm_room_cleaning",
+      "title": "宿舍大扫除",
+      "location": "dorm",
+      "condition": {},
+      "description": "室友提议一起把宿舍整理干净，床铺、桌面和阳台都需要处理。",
+      "choices": [
+        {
+          "text": "认真打扫",
+          "effects": {
+            "health": 3,
+            "mood": 4,
+            "relationship": 4,
+            "energy": -8
+          },
+          "next_event": null
+        },
+        {
+          "text": "只整理自己的区域",
+          "effects": {
+            "mood": 2,
+            "relationship": -2,
+            "energy": -2
+          },
+          "next_event": null
+        }
+      ],
+      "effects": {},
+      "next_event": null,
+      "weight": 1,
+      "periodWeights": {
+        "上午": 0.25,
+        "下午": 0.25,
+        "晚上": 0.15
+      }
+    },
+    {
+      "id": "dorm_morning_rush",
+      "title": "早八出门战",
+      "location": "dorm",
+      "condition": {},
+      "description": "闹钟响了好几遍，宿舍里一阵手忙脚乱。",
+      "choices": [
+        {
+          "text": "立刻洗漱出门",
+          "effects": {
+            "energy": -5,
+            "knowledge": 3,
+            "mood": 1
+          },
+          "next_event": null
+        },
+        {
+          "text": "再赖五分钟",
+          "effects": {
+            "energy": 2,
+            "knowledge": -2,
+            "mood": -2
+          },
+          "next_event": null
+        }
+      ],
+      "effects": {},
+      "next_event": null,
+      "weight": 1,
+      "periodWeights": {
+        "上午": 0.45,
+        "下午": 0.05,
+        "晚上": 0.05
+      }
+    },
+    {
+      "id": "dorm_group_chat",
+      "title": "宿舍闲聊",
+      "location": "dorm",
+      "condition": {},
+      "description": "室友们聊起今天发生的趣事，气氛轻松。",
+      "choices": [
+        {
+          "text": "加入聊天",
+          "effects": {
+            "relationship": 5,
+            "mood": 4,
+            "energy": -2
+          },
+          "next_event": null
+        },
+        {
+          "text": "戴耳机休息",
+          "effects": {
+            "energy": 4,
+            "relationship": -1
+          },
+          "next_event": null
+        }
+      ],
+      "effects": {},
+      "next_event": null,
+      "weight": 1,
+      "periodWeights": {
+        "上午": 0.15,
+        "下午": 0.3,
+        "晚上": 0.35
+      }
+    },
+    {
+      "id": "dorm_late_review",
+      "title": "睡前复习",
+      "location": "dorm",
+      "condition": {},
+      "description": "晚上回到宿舍，你想起还有几个知识点没消化。",
+      "choices": [
+        {
+          "text": "复习半小时",
+          "effects": {
+            "knowledge": 6,
+            "energy": -6,
+            "mood": -1
+          },
+          "next_event": null
+        },
+        {
+          "text": "早点休息",
+          "effects": {
+            "energy": 8,
+            "mood": 3
+          },
+          "next_event": null
+        }
+      ],
+      "effects": {},
+      "next_event": null,
+      "weight": 1,
+      "periodWeights": {
+        "上午": 0.15,
+        "下午": 0.4,
+        "晚上": 0.45
+      }
+    }
+  ]
+}

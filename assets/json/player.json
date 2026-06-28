@@ -1,0 +1,14 @@
+{
+  "id": "player",
+  "name": "学生",
+  "color": "#2368ff",
+  "speed": 220,
+  "size": {
+    "width": 32,
+    "height": 42
+  },
+  "start": {
+    "x": 480,
+    "y": 360
+  }
+}

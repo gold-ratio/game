@@ -1,0 +1,89 @@
+{
+  "location": "dorm",
+  "npcs": [
+    {
+      "id": "roommate",
+      "name": "室友",
+      "x": 360,
+      "y": 360,
+      "color": "#8e5cf0",
+      "interactionRange": 90,
+      "spawnRate": {
+        "上午": 0.85,
+        "下午": 0.35,
+        "晚上": 0.95
+      },
+      "size": {
+        "width": 30,
+        "height": 42
+      },
+      "dialogues": [
+        "早八真的很考验意志力。",
+        "不过宿舍整理干净以后，心情确实会好一点。"
+      ]
+    },
+    {
+      "id": "sleepy_student",
+      "name": "赖床同学",
+      "x": 230,
+      "y": 420,
+      "color": "#f06f8f",
+      "interactionRange": 80,
+      "spawnRate": {
+        "上午": 0.7,
+        "下午": 0.25,
+        "晚上": 0.45
+      },
+      "size": {
+        "width": 30,
+        "height": 42
+      },
+      "dialogues": [
+        "再睡五分钟，真的就五分钟。",
+        "如果有人帮我带早饭，我愿意称他为英雄。"
+      ]
+    },
+    {
+      "id": "study_roommate",
+      "name": "自习室友",
+      "x": 720,
+      "y": 360,
+      "color": "#4b9be8",
+      "interactionRange": 85,
+      "spawnRate": {
+        "上午": 0.3,
+        "下午": 0.65,
+        "晚上": 0.75
+      },
+      "size": {
+        "width": 30,
+        "height": 42
+      },
+      "dialogues": [
+        "我准备去图书馆，你要一起吗？",
+        "今天先完成一点点，也比完全拖延好。"
+      ]
+    },
+    {
+      "id": "game_roommate",
+      "name": "游戏室友",
+      "x": 610,
+      "y": 470,
+      "color": "#22a66f",
+      "interactionRange": 85,
+      "spawnRate": {
+        "上午": 0.2,
+        "下午": 0.45,
+        "晚上": 0.9
+      },
+      "size": {
+        "width": 30,
+        "height": 42
+      },
+      "dialogues": [
+        "晚上开黑吗？不过作业也不能完全不管。",
+        "大学生活需要一点娱乐，不然太紧绷了。"
+      ]
+    }
+  ]
+}

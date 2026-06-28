@@ -1,0 +1,89 @@
+{
+  "id": "stadium",
+  "name": "体育场",
+  "backgroundColor": "#1d5f3c",
+  "world": {
+    "width": 1400,
+    "height": 960
+  },
+  "spawns": {
+    "default": {
+      "x": 700,
+      "y": 820
+    },
+    "from-campus": {
+      "x": 700,
+      "y": 860
+    }
+  },
+  "obstacles": [
+    {
+      "id": "basketball-area",
+      "name": "篮球区占位",
+      "x": 420,
+      "y": 390,
+      "width": 520,
+      "height": 360,
+      "color": "#2d8a54"
+    },
+    {
+      "id": "badminton-area",
+      "name": "羽毛球区占位",
+      "x": 980,
+      "y": 390,
+      "width": 520,
+      "height": 360,
+      "color": "#348f6a"
+    },
+    {
+      "id": "basketball-hoop-left",
+      "name": "篮球架A占位",
+      "x": 170,
+      "y": 390,
+      "width": 60,
+      "height": 130,
+      "color": "#16472f"
+    },
+    {
+      "id": "basketball-hoop-right",
+      "name": "篮球架B占位",
+      "x": 670,
+      "y": 390,
+      "width": 60,
+      "height": 130,
+      "color": "#16472f"
+    },
+    {
+      "id": "badminton-net",
+      "name": "羽毛球网占位",
+      "x": 980,
+      "y": 390,
+      "width": 40,
+      "height": 350,
+      "color": "#16472f"
+    },
+    {
+      "id": "equipment",
+      "name": "器材区占位",
+      "x": 1210,
+      "y": 730,
+      "width": 160,
+      "height": 90,
+      "color": "#16472f"
+    }
+  ],
+  "doors": [
+    {
+      "id": "to-campus",
+      "label": "返回校园",
+      "x": 700,
+      "y": 910,
+      "width": 150,
+      "height": 46,
+      "color": "#ffffff",
+      "targetScene": "CampusScene",
+      "targetSpawn": "from-campus"
+    }
+  ],
+  "description": "体育场地图占位，分为篮球区和羽毛球区。"
+}

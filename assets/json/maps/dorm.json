@@ -1,0 +1,98 @@
+{
+  "id": "dorm",
+  "name": "宿舍",
+  "backgroundColor": "#8fc7ff",
+  "world": {
+    "width": 1280,
+    "height": 900
+  },
+  "spawns": {
+    "default": {
+      "x": 640,
+      "y": 720
+    },
+    "from-campus": {
+      "x": 640,
+      "y": 790
+    }
+  },
+  "obstacles": [
+    {
+      "id": "bed-a",
+      "name": "床铺A占位",
+      "x": 250,
+      "y": 190,
+      "width": 190,
+      "height": 95,
+      "color": "#5f9fd9"
+    },
+    {
+      "id": "bed-b",
+      "name": "床铺B占位",
+      "x": 530,
+      "y": 190,
+      "width": 190,
+      "height": 95,
+      "color": "#5f9fd9"
+    },
+    {
+      "id": "bed-c",
+      "name": "床铺C占位",
+      "x": 250,
+      "y": 450,
+      "width": 190,
+      "height": 95,
+      "color": "#5f9fd9"
+    },
+    {
+      "id": "bed-d",
+      "name": "床铺D占位",
+      "x": 530,
+      "y": 450,
+      "width": 190,
+      "height": 95,
+      "color": "#5f9fd9"
+    },
+    {
+      "id": "study-desk-left",
+      "name": "公共书桌占位",
+      "x": 910,
+      "y": 250,
+      "width": 220,
+      "height": 90,
+      "color": "#407fb7"
+    },
+    {
+      "id": "wardrobe",
+      "name": "衣柜占位",
+      "x": 1060,
+      "y": 540,
+      "width": 150,
+      "height": 260,
+      "color": "#2f6fa5"
+    },
+    {
+      "id": "balcony",
+      "name": "阳台占位",
+      "x": 640,
+      "y": 70,
+      "width": 420,
+      "height": 70,
+      "color": "#a7d8ff"
+    }
+  ],
+  "doors": [
+    {
+      "id": "to-campus",
+      "label": "返回校园",
+      "x": 640,
+      "y": 850,
+      "width": 150,
+      "height": 46,
+      "color": "#ffffff",
+      "targetScene": "CampusScene",
+      "targetSpawn": "from-campus"
+    }
+  ],
+  "description": "宿舍地图占位，包含4张床、公共书桌、衣柜和阳台。"
+}

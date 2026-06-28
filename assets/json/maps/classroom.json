@@ -1,0 +1,116 @@
+{
+  "id": "classroom",
+  "name": "教室",
+  "backgroundColor": "#f3df85",
+  "world": {
+    "width": 1280,
+    "height": 900
+  },
+  "spawns": {
+    "default": {
+      "x": 640,
+      "y": 760
+    },
+    "from-campus": {
+      "x": 640,
+      "y": 800
+    }
+  },
+  "obstacles": [
+    {
+      "id": "podium",
+      "name": "讲台占位",
+      "x": 640,
+      "y": 180,
+      "width": 360,
+      "height": 80,
+      "color": "#9b6d2e"
+    },
+    {
+      "id": "blackboard",
+      "name": "黑板占位",
+      "x": 640,
+      "y": 60,
+      "width": 560,
+      "height": 30,
+      "color": "#304438"
+    },
+    {
+      "id": "desk-a1",
+      "name": "课桌A1占位",
+      "x": 350,
+      "y": 350,
+      "width": 400,
+      "height": 80,
+      "color": "#c79c46"
+    },
+    {
+      "id": "desk-a2",
+      "name": "课桌A2占位",
+      "x": 950,
+      "y": 350,
+      "width": 400,
+      "height": 80,
+      "color": "#c79c46"
+    },
+    {
+      "id": "desk-b1",
+      "name": "课桌B1占位",
+      "x": 350,
+      "y": 500,
+      "width": 400,
+      "height": 80,
+      "color": "#c79c46"
+    },
+    {
+      "id": "desk-b2",
+      "name": "课桌B2占位",
+      "x": 950,
+      "y": 500,
+      "width": 400,
+      "height": 80,
+      "color": "#c79c46"
+    },
+    {
+      "id": "desk-b1",
+      "name": "课桌C1占位",
+      "x": 350,
+      "y": 650,
+      "width": 400,
+      "height": 80,
+      "color": "#c79c46"
+    },
+    {
+      "id": "desk-b2",
+      "name": "课桌C2占位",
+      "x": 950,
+      "y": 650,
+      "width": 400,
+      "height": 80,
+      "color": "#c79c46"
+    },
+    {
+      "id": "side-cabinet",
+      "name": "教具柜占位",
+      "x": 1230,
+      "y": 150,
+      "width": 100,
+      "height": 220,
+      "color": "#b38338"
+    }
+  ],
+  "doors": [
+    {
+      "id": "to-campus",
+      "label": "返回校园",
+      "x": 640,
+      "y": 850,
+      "width": 150,
+      "height": 46,
+      "color": "#ffffff",
+      "targetScene": "CampusScene",
+      "targetSpawn": "from-campus"
+    }
+  ],
+  "description": "教室地图占位，包含讲台、黑板和2行2列课桌。"
+}

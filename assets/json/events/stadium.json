@@ -1,0 +1,144 @@
+{
+  "location": "stadium",
+  "events": [
+    {
+      "id": "stadium_evening_run",
+      "title": "操场夜跑",
+      "location": "stadium",
+      "condition": {},
+      "description": "操场上有人在慢跑，空气不错，你也有点想活动一下。",
+      "choices": [
+        {
+          "text": "跑三圈",
+          "effects": {
+            "health": 8,
+            "energy": -12,
+            "mood": 5
+          },
+          "next_event": null
+        },
+        {
+          "text": "散步放松",
+          "effects": {
+            "health": 3,
+            "energy": -4,
+            "mood": 6
+          },
+          "next_event": null
+        }
+      ],
+      "effects": {},
+      "next_event": null,
+      "weight": 1,
+      "periodWeights": {
+        "上午": 0.2,
+        "下午": 0.25,
+        "晚上": 0.4
+      }
+    },
+    {
+      "id": "stadium_morning_stretch",
+      "title": "晨间拉伸",
+      "location": "stadium",
+      "condition": {},
+      "description": "早上的体育场人不多，适合做一点轻运动。",
+      "choices": [
+        {
+          "text": "认真拉伸",
+          "effects": {
+            "health": 5,
+            "energy": -3,
+            "mood": 3
+          },
+          "next_event": null
+        },
+        {
+          "text": "慢走一圈",
+          "effects": {
+            "health": 3,
+            "mood": 2
+          },
+          "next_event": null
+        }
+      ],
+      "effects": {},
+      "next_event": null,
+      "weight": 1,
+      "periodWeights": {
+        "上午": 0.4,
+        "下午": 0.15,
+        "晚上": 0.1
+      }
+    },
+    {
+      "id": "stadium_basketball_pickup",
+      "title": "篮球临时组队",
+      "location": "stadium",
+      "condition": {},
+      "description": "篮球区有人缺一名队友，正在招呼路过的同学。",
+      "choices": [
+        {
+          "text": "加入比赛",
+          "effects": {
+            "health": 7,
+            "relationship": 4,
+            "energy": -10
+          },
+          "next_event": null
+        },
+        {
+          "text": "在旁边投篮",
+          "effects": {
+            "health": 3,
+            "mood": 3,
+            "energy": -4
+          },
+          "next_event": null
+        }
+      ],
+      "effects": {},
+      "next_event": null,
+      "weight": 1,
+      "periodWeights": {
+        "上午": 0.2,
+        "下午": 0.4,
+        "晚上": 0.25
+      }
+    },
+    {
+      "id": "stadium_badminton_match",
+      "title": "羽毛球练习",
+      "location": "stadium",
+      "condition": {},
+      "description": "羽毛球区还有空场，有同学邀请你打一局。",
+      "choices": [
+        {
+          "text": "打一局双打",
+          "effects": {
+            "health": 6,
+            "relationship": 5,
+            "energy": -8
+          },
+          "next_event": null
+        },
+        {
+          "text": "练习发球",
+          "effects": {
+            "health": 3,
+            "energy": -3,
+            "mood": 2
+          },
+          "next_event": null
+        }
+      ],
+      "effects": {},
+      "next_event": null,
+      "weight": 1,
+      "periodWeights": {
+        "上午": 0.2,
+        "下午": 0.2,
+        "晚上": 0.25
+      }
+    }
+  ]
+}
