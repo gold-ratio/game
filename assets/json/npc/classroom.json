@@ -5,13 +5,15 @@
       "id": "teacher",
       "name": "任课老师",
       "x": 480,
-      "y": 170,
+      "y": 265,
+      "image": "assets/image/teacher.png",
+      "imageScale": 0.079,
       "color": "#2b5c8a",
       "interactionRange": 100,
       "spawnRate": {
-        "上午": 0.9,
-        "下午": 0.85,
-        "晚上": 0.25
+        "上午": 1,
+        "下午": 1,
+        "晚上": 1
       },
       "size": {
         "width": 32,
@@ -19,14 +21,19 @@
       },
       "dialogues": [
         "课堂上最重要的是知道自己哪里还不懂。",
-        "如果你愿意多问一个问题，很多难点就会松动。"
-      ]
+        "如果你愿意多问一个问题，很多难点就会松动。",
+        "多来找我聊聊，也许会慢慢解锁新的校园故事。"
+      ],
+      "keyNpc": true,
+      "dialogueFavor": 2
     },
     {
       "id": "front_row_student",
       "name": "前排同学",
-      "x": 330,
-      "y": 330,
+      "x": 310,
+      "y": 430,
+      "image": "assets/image/front_row_student.png",
+      "imageScale": 0.082,
       "color": "#d94f70",
       "interactionRange": 80,
       "spawnRate": {
@@ -46,8 +53,10 @@
     {
       "id": "group_partner",
       "name": "小组同伴",
-      "x": 610,
-      "y": 300,
+      "x": 640,
+      "y": 430,
+      "image": "assets/image/group_partner.png",
+      "imageScale": 0.077,
       "color": "#e6a23c",
       "interactionRange": 80,
       "spawnRate": {
@@ -67,8 +76,10 @@
     {
       "id": "late_student",
       "name": "迟到同学",
-      "x": 780,
-      "y": 500,
+      "x": 760,
+      "y": 530,
+      "image": "assets/image/late_student.png",
+      "imageScale": 0.084,
       "color": "#6f87d8",
       "interactionRange": 80,
       "spawnRate": {
@@ -88,8 +99,10 @@
     {
       "id": "review_student",
       "name": "复习同学",
-      "x": 250,
-      "y": 500,
+      "x": 150,
+      "y": 520,
+      "image": "assets/image/review_student.png",
+      "imageScale": 0.081,
       "color": "#4ca66a",
       "interactionRange": 80,
       "spawnRate": {

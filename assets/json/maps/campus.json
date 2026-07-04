@@ -2,6 +2,7 @@
   "id": "campus",
   "name": "校园",
   "backgroundColor": "#2f7d4f",
+  "backgroundImage": "assets/image/campus_2.png",
   "world": {
     "width": 2200,
     "height": 1600
@@ -12,97 +13,88 @@
       "y": 620
     },
     "from-dorm": {
-      "x": 360,
-      "y": 430
+      "x": 380,
+      "y": 375
     },
     "from-classroom": {
-      "x": 1120,
-      "y": 430
+      "x": 650,
+      "y": 1390
     },
     "from-library": {
-      "x": 1760,
-      "y": 920
+      "x": 1815,
+      "y": 930
     },
     "from-cafeteria": {
-      "x": 650,
-      "y": 1320
+      "x": 1170,
+      "y": 350
     },
     "from-stadium": {
-      "x": 1540,
-      "y": 1360
+      "x": 1545,
+      "y": 1460
     }
   },
   "obstacles": [
     {
       "id": "dorm-placeholder",
       "name": "宿舍占位",
-      "x": 360,
-      "y": 300,
-      "width": 340,
-      "height": 220,
+      "x": 380,
+      "y": 220,
+      "width": 350,
+      "height": 250,
       "color": "#8fc7ff"
     },
     {
       "id": "classroom-placeholder",
       "name": "教室占位",
-      "x": 1120,
-      "y": 300,
-      "width": 380,
-      "height": 230,
+      "x": 610,
+      "y": 1260,
+      "width": 360,
+      "height": 250,
       "color": "#f3df85"
     },
     {
       "id": "library-placeholder",
       "name": "图书馆占位",
-      "x": 1760,
-      "y": 780,
-      "width": 360,
-      "height": 300,
+      "x": 1795,
+      "y": 730,
+      "width": 500,
+      "height": 330,
       "color": "#b9bec8"
     },
     {
       "id": "cafeteria-placeholder",
       "name": "食堂占位",
-      "x": 650,
-      "y": 1180,
-      "width": 380,
-      "height": 240,
+      "x": 1180,
+      "y": 210,
+      "width": 390,
+      "height": 230,
       "color": "#f2a14a"
     },
     {
       "id": "stadium-placeholder",
       "name": "体育场占位",
-      "x": 1540,
-      "y": 1240,
-      "width": 520,
-      "height": 260,
+      "x": 1555,
+      "y": 1275,
+      "width": 830,
+      "height": 250,
       "color": "#1d5f3c"
-    },
-    {
-      "id": "central-lawn",
-      "name": "中央草坪占位",
-      "x": 1080,
-      "y": 820,
-      "width": 420,
-      "height": 260,
-      "color": "#3f9a62"
     },
     {
       "id": "notice-board",
       "name": "公告栏占位",
-      "x": 780,
-      "y": 760,
-      "width": 120,
-      "height": 60,
+      "x": 750,
+      "y": 705,
+      "width": 90,
+      "height": 70,
       "color": "#6b4f2a"
     },
     {
       "id": "express-station",
       "name": "快递站占位",
-      "x": 360,
-      "y": 940,
+      "x": 265,
+      "y": 905,
       "width": 220,
-      "height": 120,
+      "height": 170,
       "color": "#3aa6b9"
     }
   ],
@@ -110,8 +102,8 @@
     {
       "id": "to-dorm",
       "label": "宿舍",
-      "x": 360,
-      "y": 440,
+      "x": 380,
+      "y": 375,
       "width": 110,
       "height": 44,
       "color": "#ffffff",
@@ -121,8 +113,8 @@
     {
       "id": "to-classroom",
       "label": "教室",
-      "x": 1120,
-      "y": 450,
+      "x": 650,
+      "y": 1390,
       "width": 110,
       "height": 44,
       "color": "#ffffff",
@@ -132,8 +124,8 @@
     {
       "id": "to-library",
       "label": "图书馆",
-      "x": 1760,
-      "y": 920,
+      "x": 1815,
+      "y": 930,
       "width": 120,
       "height": 44,
       "color": "#ffffff",
@@ -143,8 +135,8 @@
     {
       "id": "to-cafeteria",
       "label": "食堂",
-      "x": 650,
-      "y": 1320,
+      "x": 1170,
+      "y": 350,
       "width": 110,
       "height": 44,
       "color": "#ffffff",
@@ -154,8 +146,8 @@
     {
       "id": "to-stadium",
       "label": "体育场",
-      "x": 1540,
-      "y": 1360,
+      "x": 1545,
+      "y": 1460,
       "width": 120,
       "height": 44,
       "color": "#ffffff",
@@ -163,5 +155,47 @@
       "targetSpawn": "from-campus"
     }
   ],
-  "description": "扩展后的校园地图，占位建筑更分散，并增加中央草坪、公告栏、快递站等区域。"
+  "description": "扩展后的校园地图，占位建筑更分散，并增加中央草坪、公告栏、快递站等区域。",
+  "interactions": [
+    {
+      "id": "notice_board",
+      "label": "查看公告栏",
+      "x": 750,
+      "y": 790,
+      "width": 130,
+      "height": 80,
+      "color": "#f7d35d",
+      "eventId": "campus_notice_board_action"
+    },
+    {
+      "id": "club_booth",
+      "label": "社团摊位",
+      "x": 780,
+      "y": 545,
+      "width": 150,
+      "height": 110,
+      "color": "#ff8a3d",
+      "eventId": "campus_club_chain_start"
+    },
+    {
+      "id": "express_station",
+      "label": "快递站",
+      "x": 430,
+      "y": 850,
+      "width": 120,
+      "height": 110,
+      "color": "#3aa6b9",
+      "eventId": "campus_express_pickup"
+    },
+    {
+      "id": "freshman_help_spot",
+      "label": "帮助新生",
+      "x": 915,
+      "y": 600,
+      "width": 120,
+      "height": 90,
+      "color": "#c89cff",
+      "eventId": "campus_freshman_chain_start"
+    }
+  ]
 }

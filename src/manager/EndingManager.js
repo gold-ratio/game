@@ -8,7 +8,7 @@
     },
 
     evaluate(state, finishedDay) {
-      if (finishedDay !== this.config.targetDay || this.getSavedEnding()) {
+      if (finishedDay < this.config.targetDay || this.getSavedEnding()) {
         return null;
       }
 
@@ -24,6 +24,18 @@
 
     meetsRequirements(state, requirements) {
       return Object.keys(requirements || {}).every((key) => {
+        if (key === "flags") {
+          return Object.keys(requirements.flags || {}).every((flag) => (
+            Boolean(state.flags && state.flags[flag]) === Boolean(requirements.flags[flag])
+          ));
+        }
+
+        if (key === "npcFavor") {
+          return Object.keys(requirements.npcFavor || {}).every((npcId) => (
+            ((state.npcFavor && state.npcFavor[npcId]) || 0) >= requirements.npcFavor[npcId]
+          ));
+        }
+
         const value = key === "money" ? state.money : state.attributes[key];
         return typeof value === "number" && value >= requirements[key];
       });

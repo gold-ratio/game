@@ -1,38 +1,83 @@
 {
-  "targetDay": 16,
-  "defaultEndingId": "ordinary_campus_day",
+  "targetDay": 7,
+  "defaultEndingId": "ordinary_campus_week",
   "endings": [
     {
-      "id": "academic_star",
-      "title": "学业闪光的一天",
+      "id": "campus_showcase_leader",
+      "title": "社团舞台上的新朋友",
       "requirements": {
-        "knowledge": 80
+        "flags": {
+          "club_showcase_done": true
+        },
+        "relationship": 60
       },
-      "description": "16 天过去，你已经熟悉了校园节奏。你在课堂和图书馆里积累了稳定的知识，也慢慢找到适合自己的学习方式。新的学期还很长，但你已经不再慌张。"
+      "description": "这一周里，你从路过社团摊位，到真正参与展示。校园不再只是建筑和道路，而是一群愿意记住你名字的人。"
     },
     {
-      "id": "social_connector",
-      "title": "校园连接者",
+      "id": "academic_presenter",
+      "title": "完成第一次课堂展示",
       "requirements": {
-        "relationship": 75
+        "flags": {
+          "presentation_done": true
+        },
+        "knowledge": 60
       },
-      "description": "这 16 天里，你认识了许多人。社团、宿舍、课堂和食堂都留下了你的脚步。对你来说，大学不只是地图上的地点，而是一张不断展开的人际网络。"
+      "description": "你把零散的问题整理成了清楚的表达。第 7 天结束时，课堂不再只是被动听讲的地方，也成为你主动发声的起点。"
+    },
+    {
+      "id": "research_pathfinder",
+      "title": "图书馆里的检索者",
+      "requirements": {
+        "flags": {
+          "research_done": true
+        },
+        "knowledge": 58
+      },
+      "description": "你学会了用关键词、书架和数据库寻找答案。资料不再像迷宫，而像一张可以慢慢展开的地图。"
+    },
+    {
+      "id": "sports_balance",
+      "title": "跑道上的稳定节奏",
+      "requirements": {
+        "flags": {
+          "sports_day_done": true
+        },
+        "health": 65
+      },
+      "description": "你没有把大学生活只交给课表，也把身体状态认真放进计划里。跑道、球场和拉伸区帮你找回了节奏。"
     },
     {
       "id": "balanced_life",
       "title": "平衡生活家",
       "requirements": {
-        "health": 65,
-        "mood": 65,
-        "knowledge": 55
+        "health": 60,
+        "mood": 60,
+        "knowledge": 50,
+        "relationship": 45
       },
-      "description": "你没有把自己逼到极限，而是在学习、休息和探索之间找到了平衡。16 天结束时，你带着不错的状态，准备继续迎接新的校园日常。"
+      "description": "这一周你没有只追逐单一目标，而是在学习、休息、社交和运动之间不断调整。普通，但很稳。"
     },
     {
-      "id": "ordinary_campus_day",
-      "title": "普通但真实的大学生活",
+      "id": "social_connector",
+      "title": "校园连接者",
+      "requirements": {
+        "relationship": 70
+      },
+      "description": "社团、宿舍、食堂和路口都留下了你的对话。你发现大学的地图，很多时候是由人际关系点亮的。"
+    },
+    {
+      "id": "academic_star",
+      "title": "学业起步很亮眼",
+      "requirements": {
+        "knowledge": 75
+      },
+      "description": "这一周你把大量时间投入课堂、图书馆和自习。辛苦是真的，进步也是真的。"
+    },
+    {
+      "id": "ordinary_campus_week",
+      "title": "普通但真实的第一周",
       "requirements": {},
-      "description": "这 16 天没有惊天动地的大事，却有很多具体的小选择。你吃过食堂的新套餐，走过校园的路，也在不同地点留下了自己的节奏。这就是大学生活开始的样子。"
+      "description": "没有哪一天完全按照计划发生，但你确实开始熟悉这座校园。吃饭、上课、散步、聊天，每个小选择都让生活变得具体。"
     }
   ]
 }

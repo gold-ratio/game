@@ -137,6 +137,329 @@
         "下午": 0.25,
         "晚上": 0.45
       }
+    },
+    {
+      "id": "cafeteria_meal_window",
+      "title": "打饭窗口",
+      "description": "窗口菜品还很齐。你可以选择均衡一点，也可以为了省钱简单解决。",
+      "condition": {},
+      "choices": [
+        {
+          "text": "点均衡套餐",
+          "effects": {
+            "money": -10,
+            "energy": 14,
+            "health": 2,
+            "mood": 3
+          },
+          "next_event": null
+        },
+        {
+          "text": "选择省钱餐",
+          "effects": {
+            "money": -4,
+            "energy": 7,
+            "mood": -1
+          },
+          "next_event": null
+        }
+      ],
+      "weight": 1,
+      "periodWeights": {
+        "上午": 0.25,
+        "下午": 0.45,
+        "晚上": 0.35
+      },
+      "location": "cafeteria",
+      "effects": {},
+      "next_event": null
+    },
+    {
+      "id": "cafeteria_drink_corner",
+      "title": "饮料区",
+      "description": "饮料柜旁边贴着新品海报，冰豆浆和果茶都还剩几瓶。",
+      "condition": {},
+      "choices": [
+        {
+          "text": "买一瓶果茶",
+          "effects": {
+            "money": -6,
+            "mood": 5,
+            "energy": 2
+          },
+          "next_event": null
+        },
+        {
+          "text": "接一杯免费温水",
+          "effects": {
+            "health": 2,
+            "mood": 1
+          },
+          "next_event": null
+        }
+      ],
+      "weight": 0.8,
+      "periodWeights": {
+        "上午": 0.15,
+        "下午": 0.35,
+        "晚上": 0.25
+      },
+      "location": "cafeteria",
+      "effects": {},
+      "next_event": null
+    },
+    {
+      "id": "cafeteria_table_chain_start",
+      "title": "拼桌区：同桌邀请",
+      "description": "高峰期座位紧张，有同学问你能不能拼桌。",
+      "condition": {},
+      "choices": [
+        {
+          "text": "答应拼桌并聊天",
+          "effects": {
+            "relationship": 5,
+            "mood": 3,
+            "energy": -2,
+            "progress": {
+              "table_friend": 1
+            }
+          },
+          "next_event": "cafeteria_table_chain_followup"
+        },
+        {
+          "text": "安静吃完",
+          "effects": {
+            "energy": 5,
+            "mood": 1
+          },
+          "next_event": null
+        }
+      ],
+      "weight": 0.8,
+      "periodWeights": {
+        "上午": 0.15,
+        "下午": 0.4,
+        "晚上": 0.3
+      },
+      "location": "cafeteria",
+      "effects": {},
+      "next_event": null
+    },
+    {
+      "id": "cafeteria_table_chain_followup",
+      "title": "拼桌区：共同吐槽",
+      "description": "你们聊起选课、排队和早八，气氛意外轻松。",
+      "condition": {},
+      "choices": [
+        {
+          "text": "分享自己的校园经验",
+          "effects": {
+            "relationship": 4,
+            "mood": 4,
+            "energy": -1,
+            "progress": {
+              "table_friend": 1
+            }
+          },
+          "next_event": null
+        },
+        {
+          "text": "听大家聊天",
+          "effects": {
+            "relationship": 2,
+            "mood": 2
+          },
+          "next_event": null
+        }
+      ],
+      "weight": 0,
+      "location": "cafeteria",
+      "effects": {},
+      "next_event": null
+    },
+    {
+      "id": "cafeteria_budget_week",
+      "title": "月底预算",
+      "description": "你看了眼余额，突然意识到最近花钱有点快。",
+      "condition": {
+        "max": {
+          "money": 20
+        }
+      },
+      "choices": [
+        {
+          "text": "制定省钱菜单",
+          "effects": {
+            "money": 2,
+            "knowledge": 2,
+            "mood": -1,
+            "flags": {
+              "budget_plan": true
+            }
+          },
+          "next_event": null
+        },
+        {
+          "text": "先吃饱再说",
+          "effects": {
+            "money": -8,
+            "energy": 10,
+            "mood": 3
+          },
+          "next_event": null
+        }
+      ],
+      "weight": 1,
+      "periodWeights": {
+        "上午": 0.2,
+        "下午": 0.25,
+        "晚上": 0.3
+      },
+      "location": "cafeteria",
+      "effects": {},
+      "next_event": null
+    },
+    {
+      "id": "cafeteria_auntie_tip",
+      "title": "阿姨的提醒",
+      "description": "食堂阿姨看你犹豫，悄悄提醒哪道菜刚出锅。",
+      "condition": {
+        "dayMin": 2
+      },
+      "choices": [
+        {
+          "text": "听从推荐",
+          "effects": {
+            "money": -7,
+            "energy": 10,
+            "mood": 4,
+            "relationship": 2
+          },
+          "next_event": null
+        },
+        {
+          "text": "坚持原计划",
+          "effects": {
+            "money": -5,
+            "energy": 7
+          },
+          "next_event": null
+        }
+      ],
+      "weight": 0.8,
+      "periodWeights": {
+        "上午": 0.2,
+        "下午": 0.4,
+        "晚上": 0.3
+      },
+      "location": "cafeteria",
+      "effects": {},
+      "next_event": null
+    },
+    {
+      "id": "cafeteria_long_queue",
+      "title": "窗口排长队",
+      "description": "你想吃的窗口排了很长的队，前面还不断有人犹豫点什么。",
+      "condition": {},
+      "choices": [
+        {
+          "text": "继续排队",
+          "effects": {
+            "energy": -4,
+            "mood": -3
+          },
+          "next_event": null
+        },
+        {
+          "text": "换一个普通窗口",
+          "effects": {
+            "money": -5,
+            "energy": 6,
+            "mood": -1
+          },
+          "next_event": null
+        }
+      ],
+      "weight": 0.9,
+      "periodWeights": {
+        "上午": 0.25,
+        "下午": 0.45,
+        "晚上": 0.35
+      },
+      "cooldownMs": 180000,
+      "location": "cafeteria",
+      "effects": {},
+      "next_event": null
+    },
+    {
+      "id": "noodle",
+      "title": "新品面条",
+      "description": "食堂上新品面条了，是韩师傅和冯师傅创作的新品",
+      "condition": {},
+      "choices": [
+        {
+          "text": "尝一尝，走个面",
+          "effects": {
+            "energy": 2,
+            "money": -10
+          },
+          "next_event": null
+        },
+        {
+          "text": "换一个普通窗口",
+          "effects": {
+            "money": -5,
+            "energy": 6,
+            "mood": -1
+          },
+          "next_event": null
+        }
+      ],
+      "weight": 0.9,
+      "periodWeights": {
+        "上午": 0.25,
+        "下午": 0.45,
+        "晚上": 0.35
+      },
+      "cooldownMs": 180000,
+      "location": "cafeteria",
+      "effects": {},
+      "next_event": null
+    },
+    {
+      "id": "cafeteria_spilled_soup",
+      "title": "汤洒了",
+      "description": "端餐盘时有人从旁边挤过，你的汤差点洒到衣服上。",
+      "condition": {},
+      "choices": [
+        {
+          "text": "赶紧擦干净",
+          "effects": {
+            "mood": -4,
+            "energy": -2
+          },
+          "next_event": null
+        },
+        {
+          "text": "重新买一份汤",
+          "effects": {
+            "money": -3,
+            "mood": -1,
+            "energy": 2
+          },
+          "next_event": null
+        }
+      ],
+      "weight": 0.55,
+      "periodWeights": {
+        "上午": 0.1,
+        "下午": 0.25,
+        "晚上": 0.25
+      },
+      "cooldownMs": 180000,
+      "location": "cafeteria",
+      "effects": {},
+      "next_event": null
     }
   ]
 }

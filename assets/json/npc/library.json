@@ -4,14 +4,16 @@
     {
       "id": "librarian",
       "name": "图书管理员",
-      "x": 480,
-      "y": 210,
+      "x": 520,
+      "y": 245,
+      "image": "assets/image/librarian.png",
+      "imageScale": 0.075,
       "color": "#5f6978",
       "interactionRange": 95,
       "spawnRate": {
-        "上午": 0.8,
-        "下午": 0.9,
-        "晚上": 0.65
+        "上午": 1,
+        "下午": 1,
+        "晚上": 1
       },
       "size": {
         "width": 32,
@@ -19,14 +21,19 @@
       },
       "dialogues": [
         "如果找不到书，可以从课程关键词开始查。",
-        "图书馆安静，但每个人都在和自己的问题对话。"
-      ]
+        "图书馆安静，但每个人都在和自己的问题对话。",
+        "多来找我聊聊，也许会慢慢解锁新的校园故事。"
+      ],
+      "keyNpc": true,
+      "dialogueFavor": 2
     },
     {
       "id": "quiet_reader",
       "name": "安静读者",
-      "x": 360,
-      "y": 420,
+      "x": 505,
+      "y": 455,
+      "image": "assets/image/quiet_reader.png",
+      "imageScale": 0.079,
       "color": "#7c6ee6",
       "interactionRange": 75,
       "spawnRate": {
@@ -46,8 +53,10 @@
     {
       "id": "exam_student",
       "name": "备考同学",
-      "x": 610,
-      "y": 430,
+      "x": 805,
+      "y": 455,
+      "image": "assets/image/exam_student.png",
+      "imageScale": 0.075,
       "color": "#d94f70",
       "interactionRange": 80,
       "spawnRate": {
@@ -62,27 +71,6 @@
       "dialogues": [
         "考试周还没到，但我已经开始紧张了。",
         "提前准备一点，至少晚上能睡得安心。"
-      ]
-    },
-    {
-      "id": "paper_student",
-      "name": "论文同学",
-      "x": 760,
-      "y": 250,
-      "color": "#e6a23c",
-      "interactionRange": 80,
-      "spawnRate": {
-        "上午": 0.25,
-        "下午": 0.55,
-        "晚上": 0.8
-      },
-      "size": {
-        "width": 30,
-        "height": 42
-      },
-      "dialogues": [
-        "我刚找到一篇很有用的参考文献。",
-        "写论文最难的是开始，第二难的是别跑题。"
       ]
     }
   ]

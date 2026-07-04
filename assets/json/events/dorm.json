@@ -139,6 +139,375 @@
         "下午": 0.4,
         "晚上": 0.45
       }
+    },
+    {
+      "id": "dorm_rest_bed",
+      "title": "床铺休息",
+      "description": "宿舍安静下来，床铺看起来非常有吸引力。",
+      "condition": {},
+      "choices": [
+        {
+          "text": "睡一会儿",
+          "effects": {
+            "energy": 16,
+            "health": 3,
+            "mood": 2
+          },
+          "next_event": null
+        },
+        {
+          "text": "闭眼休息十分钟",
+          "effects": {
+            "energy": 8,
+            "mood": 2
+          },
+          "next_event": null
+        }
+      ],
+      "weight": 1,
+      "periodWeights": {
+        "上午": 0.2,
+        "下午": 0.35,
+        "晚上": 0.45
+      },
+      "location": "dorm",
+      "effects": {},
+      "next_event": null
+    },
+    {
+      "id": "dorm_roommate_chain_start",
+      "title": "室友闲聊：今天怎么样",
+      "description": "室友问你今天过得怎么样，宿舍里的气氛很放松。",
+      "condition": {},
+      "choices": [
+        {
+          "text": "聊聊今天的事",
+          "effects": {
+            "relationship": 5,
+            "mood": 4,
+            "energy": -2,
+            "npcFavor": {
+              "roommate": 5
+            },
+            "progress": {
+              "roommate": 1
+            }
+          },
+          "next_event": "dorm_roommate_chain_followup"
+        },
+        {
+          "text": "简单回应后休息",
+          "effects": {
+            "energy": 4,
+            "npcFavor": {
+              "roommate": 1
+            }
+          },
+          "next_event": null
+        }
+      ],
+      "weight": 1,
+      "periodWeights": {
+        "上午": 0.15,
+        "下午": 0.25,
+        "晚上": 0.45
+      },
+      "location": "dorm",
+      "effects": {},
+      "next_event": null
+    },
+    {
+      "id": "dorm_roommate_chain_followup",
+      "title": "室友闲聊：互相帮忙",
+      "description": "室友提到自己也有些课业压力，问你要不要互相监督。",
+      "condition": {},
+      "choices": [
+        {
+          "text": "约定互相监督",
+          "effects": {
+            "relationship": 5,
+            "knowledge": 3,
+            "mood": 3,
+            "npcFavor": {
+              "roommate": 5
+            },
+            "progress": {
+              "roommate": 1
+            }
+          },
+          "next_event": null
+        },
+        {
+          "text": "先给他鼓励",
+          "effects": {
+            "relationship": 3,
+            "mood": 2,
+            "npcFavor": {
+              "roommate": 2
+            }
+          },
+          "next_event": null
+        }
+      ],
+      "weight": 0,
+      "location": "dorm",
+      "effects": {},
+      "next_event": null
+    },
+    {
+      "id": "dorm_roommate_night_plan",
+      "title": "室友的夜间计划",
+      "description": "你和室友已经建立了一点默契，晚上可以一起安排学习和休息。",
+      "condition": {
+        "dayMin": 4,
+        "progress": {
+          "roommate": 2
+        }
+      },
+      "choices": [
+        {
+          "text": "一起学习一小时",
+          "effects": {
+            "knowledge": 6,
+            "relationship": 4,
+            "energy": -5,
+            "flags": {
+              "roommate_plan_done": true
+            }
+          },
+          "next_event": null
+        },
+        {
+          "text": "一起放松聊天",
+          "effects": {
+            "mood": 6,
+            "relationship": 5,
+            "energy": -2,
+            "flags": {
+              "roommate_plan_done": true
+            }
+          },
+          "next_event": null
+        }
+      ],
+      "weight": 1,
+      "periodWeights": {
+        "上午": 0.05,
+        "下午": 0.2,
+        "晚上": 0.5
+      },
+      "location": "dorm",
+      "effects": {},
+      "next_event": null
+    },
+    {
+      "id": "dorm_study_table",
+      "title": "书桌学习",
+      "description": "宿舍书桌不如图书馆安静，但胜在方便。",
+      "condition": {},
+      "choices": [
+        {
+          "text": "完成待办",
+          "effects": {
+            "knowledge": 5,
+            "energy": -4,
+            "progress": {
+              "assignment": 1
+            }
+          },
+          "next_event": null
+        },
+        {
+          "text": "整理明天计划",
+          "effects": {
+            "knowledge": 2,
+            "mood": 3
+          },
+          "next_event": null
+        }
+      ],
+      "weight": 0.8,
+      "periodWeights": {
+        "上午": 0.15,
+        "下午": 0.3,
+        "晚上": 0.35
+      },
+      "location": "dorm",
+      "effects": {},
+      "next_event": null
+    },
+    {
+      "id": "dorm_game_corner",
+      "title": "游戏角落",
+      "description": "游戏室友招呼你打一局，放松和节制之间需要平衡。",
+      "condition": {},
+      "choices": [
+        {
+          "text": "打一局就停",
+          "effects": {
+            "mood": 6,
+            "relationship": 3,
+            "energy": -3
+          },
+          "next_event": null
+        },
+        {
+          "text": "婉拒并休息",
+          "effects": {
+            "energy": 5,
+            "mood": 1
+          },
+          "next_event": null
+        }
+      ],
+      "weight": 0.8,
+      "periodWeights": {
+        "上午": 0.05,
+        "下午": 0.25,
+        "晚上": 0.45
+      },
+      "location": "dorm",
+      "effects": {},
+      "next_event": null
+    },
+    {
+      "id": "dorm_noisy_night",
+      "title": "宿舍有点吵",
+      "description": "你刚想休息，走廊和隔壁突然热闹起来，注意力被打断。",
+      "condition": {},
+      "choices": [
+        {
+          "text": "戴耳机隔音",
+          "effects": {
+            "energy": 4,
+            "mood": -2
+          },
+          "next_event": null
+        },
+        {
+          "text": "提醒大家小声点",
+          "effects": {
+            "relationship": -2,
+            "mood": -1,
+            "energy": 2
+          },
+          "next_event": null
+        }
+      ],
+      "weight": 0.8,
+      "periodWeights": {
+        "上午": 0.05,
+        "下午": 0.2,
+        "晚上": 0.45
+      },
+      "cooldownMs": 180000,
+      "location": "dorm",
+      "effects": {},
+      "next_event": null
+    },
+    {
+      "id": "dorm_laundry_mishap",
+      "title": "洗衣机排队失败",
+      "description": "你想洗衣服时发现洗衣机全满了，还有一台显示故障。",
+      "condition": {},
+      "choices": [
+        {
+          "text": "等一会儿再来",
+          "effects": {
+            "energy": -3,
+            "mood": -2
+          },
+          "next_event": null
+        },
+        {
+          "text": "先手洗必要衣物",
+          "effects": {
+            "health": 1,
+            "energy": -5,
+            "mood": -1
+          },
+          "next_event": null
+        }
+      ],
+      "weight": 0.6,
+      "periodWeights": {
+        "上午": 0.15,
+        "下午": 0.25,
+        "晚上": 0.35
+      },
+      "cooldownMs": 180000,
+      "location": "dorm",
+      "effects": {},
+      "next_event": null
+    },
+    {
+      "id": "night_dream_saying",
+      "title": "夜间梦话",
+      "description": "舍友在梦中说了一些奇怪的话，你没听清，只听到。",
+      "condition": {},
+      "choices": [
+        {
+          "text": "我的刀盾",
+          "effects": {
+            "relationship": 2,
+            "mood": 1
+          },
+          "next_event": null
+        },
+        {
+          "text": "巴巴博弈",
+          "effects": {
+            "relationship": 2,
+            "mood": 1
+          },
+          "next_event": null
+        }
+      ],
+      "weight": 0.6,
+      "periodWeights": {
+        "上午": 0.15,
+        "下午": 0.25,
+        "晚上": 0.45
+      },
+      "cooldownMs": 180000,
+      "location": "dorm",
+      "effects": {},
+      "next_event": null
+    },
+    {
+      "id": "cartoo",
+      "title": "一起追番",
+      "description": "舍友打算找一部番剧一起追，你也想加入。",
+      "condition": {},
+      "choices": [
+        {
+          "text": "看博人转，插入Aizo",
+          "effects": {
+            "energy": -3,
+            "mood": -2
+          },
+          "next_event": null
+        },
+        {
+          "text": "看Mujica 咕咕嘎嘎",
+          "effects": {
+            "health": 1,
+            "energy": -5,
+            "mood": -1
+          },
+          "next_event": null
+        }
+      ],
+      "weight": 0.6,
+      "periodWeights": {
+        "上午": 0.15,
+        "下午": 0.25,
+        "晚上": 0.35
+      },
+      "cooldownMs": 180000,
+      "location": "dorm",
+      "effects": {},
+      "next_event": null
     }
   ]
 }

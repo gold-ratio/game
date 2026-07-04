@@ -135,6 +135,302 @@
         "下午": 0.2,
         "晚上": 0.4
       }
+    },
+    {
+      "id": "library_librarian_chain_start",
+      "title": "服务台：检索建议",
+      "description": "图书管理员听了你的需求，建议你先明确关键词。",
+      "condition": {},
+      "choices": [
+        {
+          "text": "请她示范检索",
+          "effects": {
+            "knowledge": 6,
+            "energy": -3,
+            "npcFavor": {
+              "librarian": 5
+            },
+            "progress": {
+              "research": 1
+            }
+          },
+          "next_event": "library_librarian_chain_followup"
+        },
+        {
+          "text": "自己先试试看",
+          "effects": {
+            "knowledge": 3,
+            "energy": -2,
+            "npcFavor": {
+              "librarian": 1
+            }
+          },
+          "next_event": null
+        }
+      ],
+      "weight": 1,
+      "periodWeights": {
+        "上午": 0.3,
+        "下午": 0.35,
+        "晚上": 0.2
+      },
+      "location": "library",
+      "effects": {},
+      "next_event": null
+    },
+    {
+      "id": "library_librarian_chain_followup",
+      "title": "服务台：关键词清单",
+      "description": "管理员帮你把主题拆成几个关键词，还提醒你保存检索式。",
+      "condition": {},
+      "choices": [
+        {
+          "text": "认真记录方法",
+          "effects": {
+            "knowledge": 6,
+            "mood": 2,
+            "npcFavor": {
+              "librarian": 5
+            },
+            "progress": {
+              "research": 1
+            }
+          },
+          "next_event": null
+        },
+        {
+          "text": "先收藏页面",
+          "effects": {
+            "knowledge": 3,
+            "npcFavor": {
+              "librarian": 2
+            }
+          },
+          "next_event": null
+        }
+      ],
+      "weight": 0,
+      "location": "library",
+      "effects": {},
+      "next_event": null
+    },
+    {
+      "id": "library_research_breakthrough",
+      "title": "资料突破",
+      "description": "之前积累的检索方法终于派上用场，你找到一组很契合的资料。",
+      "condition": {
+        "dayMin": 4,
+        "progress": {
+          "research": 2
+        }
+      },
+      "choices": [
+        {
+          "text": "整理成读书笔记",
+          "effects": {
+            "knowledge": 9,
+            "energy": -6,
+            "mood": 3,
+            "flags": {
+              "research_done": true
+            }
+          },
+          "next_event": null
+        },
+        {
+          "text": "保存资料稍后再看",
+          "effects": {
+            "knowledge": 4,
+            "energy": -2
+          },
+          "next_event": null
+        }
+      ],
+      "weight": 1,
+      "periodWeights": {
+        "上午": 0.25,
+        "下午": 0.35,
+        "晚上": 0.35
+      },
+      "location": "library",
+      "effects": {},
+      "next_event": null
+    },
+    {
+      "id": "library_bookshelf_search",
+      "title": "书架检索",
+      "description": "书架之间很安静，你发现相邻书籍也能提供意外线索。",
+      "condition": {},
+      "choices": [
+        {
+          "text": "沿主题继续找",
+          "effects": {
+            "knowledge": 7,
+            "energy": -5
+          },
+          "next_event": null
+        },
+        {
+          "text": "随手翻一本有趣的书",
+          "effects": {
+            "knowledge": 3,
+            "mood": 4,
+            "energy": -2
+          },
+          "next_event": null
+        }
+      ],
+      "weight": 0.9,
+      "periodWeights": {
+        "上午": 0.3,
+        "下午": 0.35,
+        "晚上": 0.2
+      },
+      "location": "library",
+      "effects": {},
+      "next_event": null
+    },
+    {
+      "id": "library_reading_table",
+      "title": "阅读桌",
+      "description": "桌面宽敞，灯光稳定，很适合进入专注状态。",
+      "condition": {},
+      "choices": [
+        {
+          "text": "深度阅读",
+          "effects": {
+            "knowledge": 9,
+            "energy": -8,
+            "mood": 1
+          },
+          "next_event": null
+        },
+        {
+          "text": "轻量阅读并休息",
+          "effects": {
+            "knowledge": 4,
+            "energy": -2,
+            "mood": 4
+          },
+          "next_event": null
+        }
+      ],
+      "weight": 1,
+      "periodWeights": {
+        "上午": 0.3,
+        "下午": 0.3,
+        "晚上": 0.35
+      },
+      "location": "library",
+      "effects": {},
+      "next_event": null
+    },
+    {
+      "id": "library_database_terminal",
+      "title": "数据库终端",
+      "description": "终端机可以访问论文数据库，但检索需要耐心。",
+      "condition": {},
+      "choices": [
+        {
+          "text": "学习高级检索",
+          "effects": {
+            "knowledge": 7,
+            "energy": -5,
+            "progress": {
+              "research": 1
+            }
+          },
+          "next_event": null
+        },
+        {
+          "text": "只下载推荐资料",
+          "effects": {
+            "knowledge": 4,
+            "energy": -2
+          },
+          "next_event": null
+        }
+      ],
+      "weight": 0.9,
+      "periodWeights": {
+        "上午": 0.25,
+        "下午": 0.3,
+        "晚上": 0.3
+      },
+      "location": "library",
+      "effects": {},
+      "next_event": null
+    },
+    {
+      "id": "library_seat_taken",
+      "title": "座位被占",
+      "description": "你常坐的位置已经有人了，附近的插座位也几乎坐满。",
+      "condition": {},
+      "choices": [
+        {
+          "text": "换到远一点的位置",
+          "effects": {
+            "energy": -2,
+            "mood": -2,
+            "knowledge": 2
+          },
+          "next_event": null
+        },
+        {
+          "text": "先站着整理资料",
+          "effects": {
+            "energy": -4,
+            "knowledge": 1
+          },
+          "next_event": null
+        }
+      ],
+      "weight": 0.85,
+      "periodWeights": {
+        "上午": 0.25,
+        "下午": 0.4,
+        "晚上": 0.3
+      },
+      "cooldownMs": 180000,
+      "location": "library",
+      "effects": {},
+      "next_event": null
+    },
+    {
+      "id": "library_database_error",
+      "title": "数据库登录失败",
+      "description": "论文数据库突然登录异常，你刚找到的检索入口暂时打不开。",
+      "condition": {},
+      "choices": [
+        {
+          "text": "去问管理员",
+          "effects": {
+            "knowledge": 2,
+            "relationship": 1,
+            "energy": -2
+          },
+          "next_event": null
+        },
+        {
+          "text": "先查纸质书",
+          "effects": {
+            "knowledge": 3,
+            "energy": -4,
+            "mood": -1
+          },
+          "next_event": null
+        }
+      ],
+      "weight": 0.55,
+      "periodWeights": {
+        "上午": 0.15,
+        "下午": 0.25,
+        "晚上": 0.3
+      },
+      "cooldownMs": 180000,
+      "location": "library",
+      "effects": {},
+      "next_event": null
     }
   ]
 }

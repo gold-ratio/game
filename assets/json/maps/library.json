@@ -2,6 +2,7 @@
   "id": "library",
   "name": "图书馆",
   "backgroundColor": "#b9bec8",
+  "backgroundImage": "assets/image/library.png",
   "world": {
     "width": 1320,
     "height": 920
@@ -22,62 +23,62 @@
       "name": "管理员服务前台占位",
       "x": 660,
       "y": 150,
-      "width": 360,
-      "height": 90,
+      "width": 290,
+      "height": 65,
       "color": "#838b96"
     },
     {
-      "id": "bookshelf-left-b",
-      "name": "左侧书架A占位",
-      "x": 60,
-      "y": 330,
-      "width": 90,
-      "height": 600,
-      "color": "#7f8793"
-    },
-    {
       "id": "bookshelf-left-a",
-      "name": "左侧书架B占位",
-      "x": 210,
-      "y": 330,
-      "width": 90,
-      "height": 600,
+      "name": "左侧书架A占位",
+      "x": 95,
+      "y": 345,
+      "width": 60,
+      "height": 505,
       "color": "#7f8793"
     },
     {
       "id": "bookshelf-left-b",
+      "name": "左侧书架B占位",
+      "x": 225,
+      "y": 345,
+      "width": 60,
+      "height": 505,
+      "color": "#7f8793"
+    },
+    {
+      "id": "bookshelf-left-c",
       "name": "左侧书架C占位",
-      "x": 360,
-      "y": 330,
-      "width": 90,
-      "height": 600,
+      "x": 350,
+      "y": 345,
+      "width": 60,
+      "height": 505,
       "color": "#7f8793"
     },
     {
       "id": "bookshelf-right-a",
       "name": "右侧书架A占位",
-      "x": 960,
-      "y": 330,
-      "width": 90,
-      "height": 600,
+      "x": 965,
+      "y": 345,
+      "width": 60,
+      "height": 505,
       "color": "#7f8793"
     },
     {
       "id": "bookshelf-right-b",
       "name": "右侧书架B占位",
-      "x": 1110,
-      "y": 330,
-      "width": 90,
-      "height": 600,
+      "x": 1095,
+      "y": 345,
+      "width": 60,
+      "height": 505,
       "color": "#7f8793"
     },
     {
-      "id": "bookshelf-right-a",
+      "id": "bookshelf-right-c",
       "name": "右侧书架C占位",
-      "x": 1260,
-      "y": 330,
-      "width": 90,
-      "height": 600,
+      "x": 1215,
+      "y": 345,
+      "width": 60,
+      "height": 505,
       "color": "#7f8793"
     },
     {
@@ -85,35 +86,35 @@
       "name": "阅览桌A占位",
       "x": 660,
       "y": 380,
-      "width": 230,
-      "height": 80,
+      "width": 185,
+      "height": 70,
       "color": "#969da8"
     },
     {
       "id": "reading-table-b",
       "name": "阅览桌B占位",
       "x": 660,
-      "y": 560,
-      "width": 230,
-      "height": 80,
+      "y": 565,
+      "width": 185,
+      "height": 70,
       "color": "#969da8"
     },
     {
-      "id": "reading-table-b",
+      "id": "reading-table-c",
       "name": "阅览桌C占位",
-      "x": 210,
-      "y": 800,
-      "width": 400,
-      "height": 80,
+      "x": 260,
+      "y": 765,
+      "width": 370,
+      "height": 65,
       "color": "#969da8"
     },
     {
-      "id": "reading-table-b",
+      "id": "reading-table-d",
       "name": "阅览桌D占位",
-      "x": 1110,
-      "y": 800,
-      "width": 400,
-      "height": 80,
+      "x": 1100,
+      "y": 765,
+      "width": 370,
+      "height": 65,
       "color": "#969da8"
     }
   ],
@@ -127,8 +128,50 @@
       "height": 46,
       "color": "#ffffff",
       "targetScene": "CampusScene",
-      "targetSpawn": "from-campus"
+      "targetSpawn": "from-library"
     }
   ],
-  "description": "图书馆地图占位，包含左右各2列书架、阅览桌和管理员服务前台。"
+  "description": "图书馆地图占位，包含左右各2列书架、阅览桌和管理员服务前台。",
+  "interactions": [
+    {
+      "id": "service_desk",
+      "label": "服务台",
+      "x": 520,
+      "y": 245,
+      "width": 150,
+      "height": 110,
+      "color": "#5fb7ff",
+      "eventId": "library_librarian_chain_start"
+    },
+    {
+      "id": "bookshelf",
+      "label": "书架检索",
+      "x": 420,
+      "y": 360,
+      "width": 100,
+      "height": 120,
+      "color": "#e6c16a",
+      "eventId": "library_bookshelf_search"
+    },
+    {
+      "id": "reading_table",
+      "label": "阅读桌",
+      "x": 520,
+      "y": 455,
+      "width": 120,
+      "height": 80,
+      "color": "#9ed36a",
+      "eventId": "library_reading_table"
+    },
+    {
+      "id": "database_terminal",
+      "label": "数据库终端",
+      "x": 805,
+      "y": 455,
+      "width": 120,
+      "height": 80,
+      "color": "#c89cff",
+      "eventId": "library_database_terminal"
+    }
+  ]
 }

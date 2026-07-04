@@ -20,8 +20,8 @@
       this.container.add(this.scene.add.rectangle(480, 320, 650, 430, 0x111820, 0.98));
       this.container.add(this.scene.add.rectangle(480, 320, 650, 430).setStrokeStyle(2, 0xf7f3c7, 0.5));
       this.container.add(this.createText(200, 135, "最终结局", 22, 560, "#f7f3c7"));
-      this.container.add(this.createText(200, 180, ending.title, 28, 560, "#ffffff"));
-      this.container.add(this.createText(200, 235, ending.description, 17, 560, "#dce8ff"));
+      this.container.add(this.createText(200, 180, ending.title, 28, 560, "#ffffff", { maxLines: 2 }));
+      this.container.add(this.createText(200, 235, ending.description, 17, 560, "#dce8ff", { maxLines: 5 }));
       this.container.add(this.createText(200, 335, this.formatAttributes(state), 15, 560, "#ffffff"));
 
       this.createButton(480, 465, "重新开始", this.actions.resetGame);
@@ -65,14 +65,46 @@
       return this.container.visible;
     }
 
-    createText(x, y, text, fontSize, width, color) {
-      return this.scene.add.text(x, y, text, {
+    createText(x, y, text, fontSize, width, color, options) {
+      const wrappedText = this.wrapText(text, fontSize, width, options && options.maxLines);
+      return this.scene.add.text(x, y, wrappedText, {
         fontFamily: "Arial, Microsoft YaHei, sans-serif",
         fontSize: `${fontSize}px`,
         color,
         lineSpacing: 9,
-        wordWrap: { width }
+        wordWrap: { width, useAdvancedWrap: true }
       });
+    }
+
+    wrapText(text, fontSize, width, maxLines) {
+      const maxUnits = Math.max(8, Math.floor(width / (fontSize * 1.05)));
+      const lines = [];
+      String(text || "").split("\n").forEach((paragraph) => {
+        let line = "";
+        let units = 0;
+        Array.from(paragraph).forEach((char) => {
+          const charUnits = /[\x00-\xff]/.test(char) ? 0.55 : 1;
+          if (line && units + charUnits > maxUnits) {
+            lines.push(line);
+            line = char;
+            units = charUnits;
+          } else {
+            line += char;
+            units += charUnits;
+          }
+        });
+        if (line) {
+          lines.push(line);
+        }
+      });
+
+      if (maxLines && lines.length > maxLines) {
+        const clipped = lines.slice(0, maxLines);
+        clipped[maxLines - 1] = `${clipped[maxLines - 1].replace(/[。！？,.，；;：:、\s]*$/, "")}...`;
+        return clipped.join("\n");
+      }
+
+      return lines.join("\n");
     }
   }
 

@@ -1,8 +1,54 @@
 (function () {
   const { Systems } = window.CampusGame;
 
+  function getConfig() {
+    return (window.CampusGame.GameSettings && window.CampusGame.GameSettings.ai) || {};
+  }
+
+  function withTimeout(ms) {
+    const controller = new AbortController();
+    const timer = window.setTimeout(() => controller.abort(), ms);
+    return { controller, timer };
+  }
+
   Systems.AIDiaryGenerator = {
-    generate(context) {
+    async generate(context) {
+      const aiSummary = await this.generateWithAI(context);
+      return aiSummary || this.generateLocal(context);
+    },
+
+    async generateWithAI(context) {
+      const config = getConfig();
+      if (config.enabled === false || typeof window.fetch !== "function") {
+        return null;
+      }
+
+      const timeout = withTimeout((config.requestTimeoutMs || 12000) + 6000);
+      try {
+        const response = await fetch(`${config.endpoint || "http://localhost:8765"}/api/diary`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(context),
+          signal: timeout.controller.signal
+        });
+
+        if (!response.ok) {
+          const errorText = await response.text();
+          console.warn("AI diary generation failed:", response.status, errorText);
+          return null;
+        }
+
+        const payload = await response.json();
+        return this.normalizeSummary(payload.diary || payload, context);
+      } catch (error) {
+        console.warn("AI diary generation failed:", error);
+        return null;
+      } finally {
+        window.clearTimeout(timeout.timer);
+      }
+    },
+
+    generateLocal(context) {
       const records = context.records || [];
       const config = context.diaryConfig || {};
       const state = context.state;
@@ -16,6 +62,20 @@
         content: lines.join("\n"),
         endingNote: this.buildEndingNote(state),
         generatedBy: "local-template"
+      };
+    },
+
+    normalizeSummary(summary, context) {
+      if (!summary || !summary.title || !summary.content) {
+        return null;
+      }
+
+      return {
+        day: context.finishedDay,
+        title: String(summary.title),
+        content: String(summary.content),
+        endingNote: String(summary.endingNote || this.buildEndingNote(context.state)),
+        generatedBy: summary.generatedBy || "ai-qwen-max"
       };
     },
 

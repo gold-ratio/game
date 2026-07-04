@@ -17,21 +17,30 @@
       this.container.setVisible(true);
 
       this.container.add(this.scene.add.rectangle(0, 0, 960, 640, 0x000000, 0.55).setOrigin(0));
-      this.container.add(this.scene.add.rectangle(480, 320, 620, 420, 0x17202a, 0.97));
-      this.container.add(this.scene.add.rectangle(480, 320, 620, 420).setStrokeStyle(2, 0xffffff, 0.3));
+      this.container.add(this.scene.add.rectangle(480, 320, 660, 470, 0x17202a, 0.97));
+      this.container.add(this.scene.add.rectangle(480, 320, 660, 470).setStrokeStyle(2, 0xffffff, 0.3));
 
-      this.container.add(this.createText(210, 140, summary.title, 26, 540, "#f7f3c7"));
-      this.container.add(this.createText(210, 190, summary.content, 17, 540, "#ffffff"));
-      this.container.add(this.createText(210, 315, summary.endingNote, 16, 540, "#dce8ff"));
-      this.container.add(this.createText(210, 360, `新的一天：第 ${state.day} 天 ${state.periods[state.periodIndex]}`, 16, 540, "#ffffff"));
+      const title = this.createText(180, 105, summary.title, 26, 600, "#f7f3c7", { maxLines: 2 });
+      this.container.add(title);
 
-      this.createCloseButton();
+      const contentY = title.y + title.height + 24;
+      const content = this.createText(180, contentY, summary.content, 17, 600, "#ffffff", { maxLines: 8 });
+      this.container.add(content);
+
+      const endingY = Math.min(content.y + content.height + 22, 390);
+      const endingNote = this.createText(180, endingY, summary.endingNote, 16, 600, "#dce8ff", { maxLines: 2 });
+      this.container.add(endingNote);
+
+      const nextDayY = Math.min(endingNote.y + endingNote.height + 18, 440);
+      this.container.add(this.createText(180, nextDayY, `新的一天：第 ${state.day} 天 ${state.periods[state.periodIndex]}`, 16, 600, "#ffffff", { maxLines: 1 }));
+
+      this.createCloseButton(500);
     }
 
-    createCloseButton() {
-      const button = this.scene.add.rectangle(480, 455, 220, 46, 0x253446, 1)
+    createCloseButton(y) {
+      const button = this.scene.add.rectangle(480, y, 220, 46, 0x253446, 1)
         .setInteractive({ useHandCursor: true });
-      const label = this.createText(420, 442, "开始新的一天", 16, 180, "#ffffff");
+      const label = this.createText(420, y - 13, "开始新的一天", 16, 180, "#ffffff");
 
       button.on("pointerover", function () {
         button.setFillStyle(0x2f4964, 1);
@@ -59,14 +68,46 @@
       return this.container.visible;
     }
 
-    createText(x, y, text, fontSize, width, color) {
-      return this.scene.add.text(x, y, text, {
+    createText(x, y, text, fontSize, width, color, options) {
+      const wrappedText = this.wrapText(text, fontSize, width, options && options.maxLines);
+      return this.scene.add.text(x, y, wrappedText, {
         fontFamily: "Arial, Microsoft YaHei, sans-serif",
         fontSize: `${fontSize}px`,
         color,
         lineSpacing: 8,
-        wordWrap: { width }
+        wordWrap: { width, useAdvancedWrap: true }
       });
+    }
+
+    wrapText(text, fontSize, width, maxLines) {
+      const maxUnits = Math.max(8, Math.floor(width / (fontSize * 1.05)));
+      const lines = [];
+      String(text || "").split("\n").forEach((paragraph) => {
+        let line = "";
+        let units = 0;
+        Array.from(paragraph).forEach((char) => {
+          const charUnits = /[\x00-\xff]/.test(char) ? 0.55 : 1;
+          if (line && units + charUnits > maxUnits) {
+            lines.push(line);
+            line = char;
+            units = charUnits;
+          } else {
+            line += char;
+            units += charUnits;
+          }
+        });
+        if (line) {
+          lines.push(line);
+        }
+      });
+
+      if (maxLines && lines.length > maxLines) {
+        const clipped = lines.slice(0, maxLines);
+        clipped[maxLines - 1] = `${clipped[maxLines - 1].replace(/[。！？,.，；;：:、\s]*$/, "")}...`;
+        return clipped.join("\n");
+      }
+
+      return lines.join("\n");
     }
   }
 

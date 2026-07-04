@@ -7,6 +7,13 @@
     width: 960,
     height: 640,
     backgroundColor: "#1f2430",
-    parent: "game-root"
+    parent: "game-root",
+    ai: {
+      enabled: true,
+      endpoint: "http://localhost:8765",
+      eventChance: 0.5,
+      dialogueChance: 0.7,
+      requestTimeoutMs: 120000
+    }
   };
 })();

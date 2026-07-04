@@ -139,6 +139,310 @@
         "下午": 0.2,
         "晚上": 0.25
       }
+    },
+    {
+      "id": "stadium_coach_chain_start",
+      "title": "体育老师：训练建议",
+      "description": "体育老师看你在场边犹豫，建议你先从稳定运动开始。",
+      "condition": {},
+      "choices": [
+        {
+          "text": "请他安排训练",
+          "effects": {
+            "health": 6,
+            "energy": -6,
+            "mood": 3,
+            "npcFavor": {
+              "coach": 5
+            },
+            "progress": {
+              "training": 1
+            }
+          },
+          "next_event": "stadium_coach_chain_followup"
+        },
+        {
+          "text": "先自己慢跑",
+          "effects": {
+            "health": 3,
+            "energy": -3,
+            "npcFavor": {
+              "coach": 1
+            }
+          },
+          "next_event": null
+        }
+      ],
+      "weight": 1,
+      "periodWeights": {
+        "上午": 0.35,
+        "下午": 0.35,
+        "晚上": 0.2
+      },
+      "location": "stadium",
+      "effects": {},
+      "next_event": null
+    },
+    {
+      "id": "stadium_coach_chain_followup",
+      "title": "体育老师：循序渐进",
+      "description": "老师提醒你不要硬撑，运动习惯比一次高强度更重要。",
+      "condition": {},
+      "choices": [
+        {
+          "text": "按计划完成训练",
+          "effects": {
+            "health": 7,
+            "mood": 4,
+            "energy": -7,
+            "npcFavor": {
+              "coach": 5
+            },
+            "progress": {
+              "training": 1
+            }
+          },
+          "next_event": null
+        },
+        {
+          "text": "减少强度",
+          "effects": {
+            "health": 4,
+            "mood": 2,
+            "energy": -3,
+            "npcFavor": {
+              "coach": 2
+            }
+          },
+          "next_event": null
+        }
+      ],
+      "weight": 0,
+      "location": "stadium",
+      "effects": {},
+      "next_event": null
+    },
+    {
+      "id": "stadium_sports_day",
+      "title": "小型运动日",
+      "description": "你之前坚持训练，今天参加小型运动日时状态不错。",
+      "condition": {
+        "dayMin": 5,
+        "progress": {
+          "training": 2
+        }
+      },
+      "choices": [
+        {
+          "text": "报名接力",
+          "effects": {
+            "health": 8,
+            "relationship": 5,
+            "mood": 5,
+            "energy": -8,
+            "flags": {
+              "sports_day_done": true
+            }
+          },
+          "next_event": null
+        },
+        {
+          "text": "做志愿计时",
+          "effects": {
+            "relationship": 5,
+            "mood": 4,
+            "energy": -3,
+            "flags": {
+              "sports_day_done": true
+            }
+          },
+          "next_event": null
+        }
+      ],
+      "weight": 1,
+      "periodWeights": {
+        "上午": 0.25,
+        "下午": 0.45,
+        "晚上": 0.1
+      },
+      "location": "stadium",
+      "effects": {},
+      "next_event": null
+    },
+    {
+      "id": "stadium_run_track",
+      "title": "跑道训练",
+      "description": "跑道上有人快跑，也有人慢走。你可以选择适合自己的节奏。",
+      "condition": {},
+      "choices": [
+        {
+          "text": "稳定跑两圈",
+          "effects": {
+            "health": 6,
+            "energy": -8,
+            "mood": 4
+          },
+          "next_event": null
+        },
+        {
+          "text": "慢走放松",
+          "effects": {
+            "health": 3,
+            "energy": -3,
+            "mood": 5
+          },
+          "next_event": null
+        }
+      ],
+      "weight": 1,
+      "periodWeights": {
+        "上午": 0.35,
+        "下午": 0.25,
+        "晚上": 0.4
+      },
+      "location": "stadium",
+      "effects": {},
+      "next_event": null
+    },
+    {
+      "id": "stadium_basketball_chain_start",
+      "title": "篮球场：临时缺人",
+      "description": "篮球同学正好缺一名队友，向你挥了挥手。",
+      "condition": {},
+      "choices": [
+        {
+          "text": "加入半场赛",
+          "effects": {
+            "health": 6,
+            "relationship": 4,
+            "energy": -8,
+            "progress": {
+              "basketball": 1
+            }
+          },
+          "next_event": "stadium_basketball_chain_followup"
+        },
+        {
+          "text": "只投几个篮",
+          "effects": {
+            "health": 3,
+            "mood": 3,
+            "energy": -3
+          },
+          "next_event": null
+        }
+      ],
+      "weight": 0.8,
+      "periodWeights": {
+        "上午": 0.15,
+        "下午": 0.4,
+        "晚上": 0.35
+      },
+      "location": "stadium",
+      "effects": {},
+      "next_event": null
+    },
+    {
+      "id": "stadium_basketball_chain_followup",
+      "title": "篮球场：赛后击掌",
+      "description": "虽然配合还不熟，但大家都玩得很开心。",
+      "condition": {},
+      "choices": [
+        {
+          "text": "约下次再打",
+          "effects": {
+            "relationship": 5,
+            "mood": 4,
+            "energy": -2,
+            "progress": {
+              "basketball": 1
+            }
+          },
+          "next_event": null
+        },
+        {
+          "text": "感谢后离开",
+          "effects": {
+            "relationship": 2,
+            "mood": 2
+          },
+          "next_event": null
+        }
+      ],
+      "weight": 0,
+      "location": "stadium",
+      "effects": {},
+      "next_event": null
+    },
+    {
+      "id": "stadium_minor_sprain",
+      "title": "脚踝有点不舒服",
+      "description": "热身不够充分，跑动时脚踝突然有点发紧。",
+      "condition": {},
+      "choices": [
+        {
+          "text": "立刻停下拉伸",
+          "effects": {
+            "health": -1,
+            "energy": -2,
+            "mood": -1
+          },
+          "next_event": null
+        },
+        {
+          "text": "硬撑继续",
+          "effects": {
+            "health": -6,
+            "energy": -5,
+            "mood": -3
+          },
+          "next_event": null
+        }
+      ],
+      "weight": 0.6,
+      "periodWeights": {
+        "上午": 0.25,
+        "下午": 0.25,
+        "晚上": 0.25
+      },
+      "cooldownMs": 180000,
+      "location": "stadium",
+      "effects": {},
+      "next_event": null
+    },
+    {
+      "id": "stadium_ball_hit",
+      "title": "球飞了过来",
+      "description": "旁边球场一个球突然飞出界，差点砸到你。",
+      "condition": {},
+      "choices": [
+        {
+          "text": "帮忙把球传回去",
+          "effects": {
+            "relationship": 2,
+            "mood": -1
+          },
+          "next_event": null
+        },
+        {
+          "text": "离球场远一点",
+          "effects": {
+            "mood": -2,
+            "energy": -1
+          },
+          "next_event": null
+        }
+      ],
+      "weight": 0.55,
+      "periodWeights": {
+        "上午": 0.15,
+        "下午": 0.35,
+        "晚上": 0.25
+      },
+      "cooldownMs": 180000,
+      "location": "stadium",
+      "effects": {},
+      "next_event": null
     }
   ]
 }

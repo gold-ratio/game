@@ -104,38 +104,509 @@
       }
     },
     {
-      "id": "campus_evening_walk",
-      "title": "校园夜路",
-      "location": "campus",
+      "id": "campus_notice_board_action",
+      "title": "公告栏前的选择",
+      "description": "公告栏上贴着本周讲座、志愿招募和院系比赛的信息。",
       "condition": {},
-      "description": "夜晚的校园安静下来，路灯把树影拉得很长。",
       "choices": [
         {
-          "text": "慢慢散步",
+          "text": "记下学术讲座时间",
           "effects": {
-            "mood": 7,
-            "health": 2,
-            "energy": -3
+            "knowledge": 4,
+            "energy": -2,
+            "flags": {
+              "lecture_seen": true
+            }
           },
           "next_event": null
         },
         {
-          "text": "坐在草坪边发呆",
+          "text": "报名志愿活动",
           "effects": {
-            "mood": 5,
-            "energy": 2
+            "relationship": 4,
+            "mood": 3,
+            "energy": -3,
+            "flags": {
+              "volunteer_signed": true
+            }
           },
           "next_event": null
         }
       ],
-      "effects": {},
-      "next_event": null,
       "weight": 1,
       "periodWeights": {
-        "上午": 0.05,
-        "下午": 0.05,
-        "晚上": 0.5
-      }
+        "上午": 0.35,
+        "下午": 0.4,
+        "晚上": 0.1
+      },
+      "location": "campus",
+      "effects": {},
+      "next_event": null
+    },
+    {
+      "id": "campus_club_chain_start",
+      "title": "社团摊位：第一次停下",
+      "description": "社团学姐正在向路过的同学介绍活动。她看见你停下，递来一张报名表。",
+      "condition": {},
+      "choices": [
+        {
+          "text": "认真了解社团",
+          "effects": {
+            "relationship": 4,
+            "mood": 2,
+            "energy": -3,
+            "npcFavor": {
+              "club_senior": 5
+            },
+            "flags": {
+              "club_intro_done": true
+            },
+            "progress": {
+              "club": 1
+            }
+          },
+          "next_event": "campus_club_chain_followup"
+        },
+        {
+          "text": "只拿一张传单",
+          "effects": {
+            "mood": 1,
+            "npcFavor": {
+              "club_senior": 1
+            }
+          },
+          "next_event": null
+        }
+      ],
+      "weight": 0.5,
+      "periodWeights": {
+        "上午": 0.25,
+        "下午": 0.4,
+        "晚上": 0.05
+      },
+      "location": "campus",
+      "effects": {},
+      "next_event": null
+    },
+    {
+      "id": "campus_club_chain_followup",
+      "title": "社团摊位：小任务",
+      "description": "学姐说下午需要帮忙整理展板，如果你愿意参与，可以更快认识大家。",
+      "condition": {},
+      "choices": [
+        {
+          "text": "留下帮忙",
+          "effects": {
+            "relationship": 6,
+            "knowledge": 2,
+            "energy": -6,
+            "npcFavor": {
+              "club_senior": 6
+            },
+            "progress": {
+              "club": 1
+            }
+          },
+          "next_event": null
+        },
+        {
+          "text": "约下次再来",
+          "effects": {
+            "mood": 1,
+            "npcFavor": {
+              "club_senior": 2
+            }
+          },
+          "next_event": null
+        }
+      ],
+      "weight": 0,
+      "location": "campus",
+      "effects": {},
+      "next_event": null
+    },
+    {
+      "id": "campus_club_showcase",
+      "title": "社团成果展示",
+      "description": "你之前参与过社团准备，今天终于到了小展示。学姐把你介绍给其他成员。",
+      "condition": {
+        "dayMin": 5,
+        "progress": {
+          "club": 2
+        },
+        "npcFavor": {
+          "club_senior": 8
+        }
+      },
+      "choices": [
+        {
+          "text": "上台帮忙介绍",
+          "effects": {
+            "relationship": 8,
+            "knowledge": 4,
+            "mood": 5,
+            "energy": -6,
+            "flags": {
+              "club_showcase_done": true
+            }
+          },
+          "next_event": null
+        },
+        {
+          "text": "负责现场协助",
+          "effects": {
+            "relationship": 5,
+            "mood": 4,
+            "energy": -3,
+            "flags": {
+              "club_showcase_done": true
+            }
+          },
+          "next_event": null
+        }
+      ],
+      "weight": 1,
+      "periodWeights": {
+        "上午": 0.1,
+        "下午": 0.55,
+        "晚上": 0.1
+      },
+      "location": "campus",
+      "effects": {},
+      "next_event": null
+    },
+    {
+      "id": "campus_freshman_chain_start",
+      "title": "迷路新生：路口求助",
+      "description": "中央路口有新生拿着手机地图转圈，似乎找不到图书馆。",
+      "condition": {},
+      "choices": [
+        {
+          "text": "带他走一段",
+          "effects": {
+            "relationship": 5,
+            "mood": 3,
+            "energy": -3,
+            "npcFavor": {
+              "lost_freshman": 5
+            },
+            "flags": {
+              "helped_freshman": true
+            },
+            "progress": {
+              "freshman": 1
+            }
+          },
+          "next_event": "campus_freshman_chain_followup"
+        },
+        {
+          "text": "给他指方向",
+          "effects": {
+            "relationship": 2,
+            "energy": -1,
+            "npcFavor": {
+              "lost_freshman": 2
+            }
+          },
+          "next_event": null
+        }
+      ],
+      "weight": 0.7,
+      "periodWeights": {
+        "上午": 0.35,
+        "下午": 0.3,
+        "晚上": 0.15
+      },
+      "location": "campus",
+      "effects": {},
+      "next_event": null
+    },
+    {
+      "id": "campus_freshman_chain_followup",
+      "title": "迷路新生：交换联系方式",
+      "description": "新生终于找到方向，认真向你道谢，还说以后也想熟悉校园。",
+      "condition": {},
+      "choices": [
+        {
+          "text": "加个联系方式",
+          "effects": {
+            "relationship": 4,
+            "mood": 2,
+            "npcFavor": {
+              "lost_freshman": 5
+            },
+            "progress": {
+              "freshman": 1
+            }
+          },
+          "next_event": null
+        },
+        {
+          "text": "鼓励他多逛逛",
+          "effects": {
+            "mood": 2,
+            "npcFavor": {
+              "lost_freshman": 2
+            }
+          },
+          "next_event": null
+        }
+      ],
+      "weight": 0,
+      "location": "campus",
+      "effects": {},
+      "next_event": null
+    },
+    {
+      "id": "campus_freshman_thanks",
+      "title": "新生的感谢",
+      "description": "之前帮助过的新生在路上认出了你，他说自己已经能独立认路了。",
+      "condition": {
+        "dayMin": 3,
+        "progress": {
+          "freshman": 2
+        }
+      },
+      "choices": [
+        {
+          "text": "一起去公告栏看看",
+          "effects": {
+            "relationship": 5,
+            "mood": 4,
+            "energy": -2,
+            "flags": {
+              "freshman_friend_done": true
+            }
+          },
+          "next_event": null
+        },
+        {
+          "text": "简单寒暄",
+          "effects": {
+            "relationship": 2,
+            "mood": 2
+          },
+          "next_event": null
+        }
+      ],
+      "weight": 1,
+      "periodWeights": {
+        "上午": 0.25,
+        "下午": 0.35,
+        "晚上": 0.1
+      },
+      "location": "campus",
+      "effects": {},
+      "next_event": null
+    },
+    {
+      "id": "campus_express_pickup",
+      "title": "快递站的小惊喜",
+      "description": "快递站今天人不算多，你可以顺路取包裹，也可以帮忙把错放的包裹交给工作人员。",
+      "condition": {},
+      "choices": [
+        {
+          "text": "取自己的包裹",
+          "effects": {
+            "mood": 4,
+            "energy": -1
+          },
+          "next_event": null
+        },
+        {
+          "text": "帮忙整理错放包裹",
+          "effects": {
+            "relationship": 3,
+            "mood": 2,
+            "energy": -3,
+            "flags": {
+              "helped_express": true
+            }
+          },
+          "next_event": null
+        }
+      ],
+      "weight": 1,
+      "periodWeights": {
+        "上午": 0.15,
+        "下午": 0.35,
+        "晚上": 0.25
+      },
+      "location": "campus",
+      "effects": {},
+      "next_event": null
+    },
+    {
+      "id": "campus_rainy_shortcut",
+      "title": "忽然下起小雨",
+      "description": "云层压低，校园路上突然飘起小雨。你得决定怎么走。",
+      "condition": {
+        "dayMin": 2
+      },
+      "choices": [
+        {
+          "text": "从教学楼走廊绕路",
+          "effects": {
+            "energy": -2,
+            "mood": 1
+          },
+          "next_event": null
+        },
+        {
+          "text": "冒雨快步穿过主路",
+          "effects": {
+            "health": -2,
+            "energy": -4,
+            "mood": 3
+          },
+          "next_event": null
+        }
+      ],
+      "weight": 0.7,
+      "periodWeights": {
+        "上午": 0.1,
+        "下午": 0.3,
+        "晚上": 0.2
+      },
+      "location": "campus",
+      "effects": {},
+      "next_event": null
+    },
+    {
+      "id": "campus_phone_low_battery",
+      "title": "手机快没电",
+      "description": "走到半路手机只剩 3% 电量，地图和消息都变得不太可靠。",
+      "condition": {},
+      "choices": [
+        {
+          "text": "先去找充电处",
+          "effects": {
+            "energy": -4,
+            "mood": -2
+          },
+          "next_event": null
+        },
+        {
+          "text": "硬着头皮继续走",
+          "effects": {
+            "mood": -5,
+            "relationship": -1
+          },
+          "next_event": null
+        }
+      ],
+      "weight": 0.8,
+      "periodWeights": {
+        "上午": 0.15,
+        "下午": 0.25,
+        "晚上": 0.35
+      },
+      "cooldownMs": 180000,
+      "location": "campus",
+      "effects": {},
+      "next_event": null
+    },
+    {
+      "id": "huoyingrenzhe",
+      "title": "火影忍者",
+      "description": "路上看到电竞社的同学在讨论火影忍者，你也忍不住加入了讨论。",
+      "condition": {},
+      "choices": [
+        {
+          "text": "压力！！！",
+          "effects": {
+            "energy": 5,
+            "mood": 3
+          },
+          "next_event": null
+        },
+        {
+          "text": "开始唱歌：灌伤害，骗骗花，拉开距离，回回拉",
+          "effects": {
+            "mood": 10,
+            "relationship": -2
+          },
+          "next_event": null
+        }
+      ],
+      "weight": 0.8,
+      "periodWeights": {
+        "上午": 0.15,
+        "下午": 0.25,
+        "晚上": 0.35
+      },
+      "cooldownMs": 180000,
+      "location": "campus",
+      "effects": {},
+      "next_event": null
+    },
+    {
+      "id": "hajimi",
+      "title": "哈基米之歌",
+      "description": "路上看到有人在讨论哈基米的进球，你会选择：",
+      "condition": {},
+      "choices": [
+        {
+          "text": "讨论运动的艺术",
+          "effects": {
+            "energy": 5,
+            "mood": 3
+          },
+          "next_event": null
+        },
+        {
+          "text": "暗自开始唱歌：哈基米哈基，阿西噶阿西",
+          "effects": {
+            "mood": 10,
+            "relationship": -2
+          },
+          "next_event": null
+        }
+      ],
+      "weight": 0.8,
+      "periodWeights": {
+        "上午": 0.15,
+        "下午": 0.25,
+        "晚上": 0.35
+      },
+      "cooldownMs": 180000,
+      "location": "campus",
+      "effects": {},
+      "next_event": null
+    },
+    {
+      "id": "campus_wrong_turn",
+      "title": "绕错路",
+      "description": "你以为这条小路能抄近道，结果绕到一片陌生的绿地边。",
+      "condition": {},
+      "choices": [
+        {
+          "text": "打开地图重新规划",
+          "effects": {
+            "energy": -5,
+            "mood": -2
+          },
+          "next_event": null
+        },
+        {
+          "text": "顺便散散步",
+          "effects": {
+            "energy": -3,
+            "mood": 2
+          },
+          "next_event": null
+        }
+      ],
+      "weight": 0.7,
+      "periodWeights": {
+        "上午": 0.2,
+        "下午": 0.3,
+        "晚上": 0.2
+      },
+      "cooldownMs": 180000,
+      "location": "campus",
+      "effects": {},
+      "next_event": null
     }
   ]
 }

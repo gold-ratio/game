@@ -139,6 +139,359 @@
         "下午": 0.05,
         "晚上": 0.6
       }
+    },
+    {
+      "id": "classroom_teacher_chain_start",
+      "title": "讲台提问：留下来",
+      "description": "下课后老师还在整理课件，你可以趁现在问清楚困惑的地方。",
+      "condition": {},
+      "choices": [
+        {
+          "text": "认真提问",
+          "effects": {
+            "knowledge": 7,
+            "energy": -4,
+            "npcFavor": {
+              "teacher": 5
+            },
+            "progress": {
+              "teacher_guidance": 1
+            }
+          },
+          "next_event": "classroom_teacher_chain_followup"
+        },
+        {
+          "text": "只问作业要求",
+          "effects": {
+            "knowledge": 3,
+            "energy": -1,
+            "npcFavor": {
+              "teacher": 2
+            }
+          },
+          "next_event": null
+        }
+      ],
+      "weight": 1,
+      "periodWeights": {
+        "上午": 0.35,
+        "下午": 0.35,
+        "晚上": 0.15
+      },
+      "location": "classroom",
+      "effects": {},
+      "next_event": null
+    },
+    {
+      "id": "classroom_teacher_chain_followup",
+      "title": "讲台提问：老师的建议",
+      "description": "老师发现你准备得很认真，建议你把问题整理成一次小展示。",
+      "condition": {},
+      "choices": [
+        {
+          "text": "接受展示建议",
+          "effects": {
+            "knowledge": 5,
+            "mood": 2,
+            "energy": -3,
+            "npcFavor": {
+              "teacher": 5
+            },
+            "flags": {
+              "presentation_invited": true
+            },
+            "progress": {
+              "presentation": 1
+            }
+          },
+          "next_event": null
+        },
+        {
+          "text": "先继续准备",
+          "effects": {
+            "knowledge": 3,
+            "npcFavor": {
+              "teacher": 2
+            }
+          },
+          "next_event": null
+        }
+      ],
+      "weight": 0,
+      "location": "classroom",
+      "effects": {},
+      "next_event": null
+    },
+    {
+      "id": "classroom_presentation_day",
+      "title": "课堂小展示",
+      "description": "你之前接受了老师建议，今天终于轮到你做一个简短展示。",
+      "condition": {
+        "dayMin": 5,
+        "flags": {
+          "presentation_invited": true
+        },
+        "knowledge": 45
+      },
+      "choices": [
+        {
+          "text": "自信展示",
+          "effects": {
+            "knowledge": 8,
+            "relationship": 4,
+            "mood": 5,
+            "energy": -6,
+            "flags": {
+              "presentation_done": true
+            }
+          },
+          "next_event": null
+        },
+        {
+          "text": "照着笔记完成",
+          "effects": {
+            "knowledge": 5,
+            "mood": 1,
+            "energy": -4,
+            "flags": {
+              "presentation_done": true
+            }
+          },
+          "next_event": null
+        }
+      ],
+      "weight": 1,
+      "periodWeights": {
+        "上午": 0.35,
+        "下午": 0.35,
+        "晚上": 0.05
+      },
+      "location": "classroom",
+      "effects": {},
+      "next_event": null
+    },
+    {
+      "id": "classroom_front_seat",
+      "title": "前排座位",
+      "description": "前排的位置能看清板书，也很难走神。",
+      "condition": {},
+      "choices": [
+        {
+          "text": "认真听一整节",
+          "effects": {
+            "knowledge": 8,
+            "energy": -7,
+            "mood": -1
+          },
+          "next_event": null
+        },
+        {
+          "text": "边听边整理重点",
+          "effects": {
+            "knowledge": 6,
+            "energy": -4,
+            "mood": 1
+          },
+          "next_event": null
+        }
+      ],
+      "weight": 1,
+      "periodWeights": {
+        "上午": 0.4,
+        "下午": 0.35,
+        "晚上": 0.05
+      },
+      "location": "classroom",
+      "effects": {},
+      "next_event": null
+    },
+    {
+      "id": "classroom_study_desk",
+      "title": "自习课桌",
+      "description": "教室里暂时没人打扰，适合补作业或整理笔记。",
+      "condition": {},
+      "choices": [
+        {
+          "text": "推进作业",
+          "effects": {
+            "knowledge": 6,
+            "energy": -5,
+            "progress": {
+              "assignment": 1
+            }
+          },
+          "next_event": null
+        },
+        {
+          "text": "整理错题",
+          "effects": {
+            "knowledge": 5,
+            "energy": -4,
+            "mood": 1
+          },
+          "next_event": null
+        }
+      ],
+      "weight": 0.9,
+      "periodWeights": {
+        "上午": 0.2,
+        "下午": 0.25,
+        "晚上": 0.5
+      },
+      "location": "classroom",
+      "effects": {},
+      "next_event": null
+    },
+    {
+      "id": "classroom_assignment_due",
+      "title": "作业截止前",
+      "description": "课程作业快到截止时间了，你需要检查自己的完成度。",
+      "condition": {
+        "dayMin": 4
+      },
+      "choices": [
+        {
+          "text": "集中补完",
+          "effects": {
+            "knowledge": 7,
+            "energy": -9,
+            "mood": -2,
+            "progress": {
+              "assignment": 2
+            },
+            "flags": {
+              "assignment_done": true
+            }
+          },
+          "next_event": null
+        },
+        {
+          "text": "先完成基本要求",
+          "effects": {
+            "knowledge": 4,
+            "energy": -4,
+            "flags": {
+              "assignment_done": true
+            }
+          },
+          "next_event": null
+        }
+      ],
+      "weight": 0.8,
+      "periodWeights": {
+        "上午": 0.2,
+        "下午": 0.3,
+        "晚上": 0.5
+      },
+      "location": "classroom",
+      "effects": {},
+      "next_event": null
+    },
+    {
+      "id": "classroom_late_alarm",
+      "title": "差点迟到",
+      "description": "你赶到教室时铃声刚响，前排座位已经坐满。",
+      "condition": {},
+      "choices": [
+        {
+          "text": "从后门悄悄进去",
+          "effects": {
+            "mood": -3,
+            "knowledge": -2,
+            "energy": -2
+          },
+          "next_event": null
+        },
+        {
+          "text": "课后补问同学",
+          "effects": {
+            "relationship": 2,
+            "knowledge": 2,
+            "energy": -3
+          },
+          "next_event": null
+        }
+      ],
+      "weight": 0.8,
+      "periodWeights": {
+        "上午": 0.35,
+        "下午": 0.25,
+        "晚上": 0.05
+      },
+      "cooldownMs": 180000,
+      "location": "classroom",
+      "effects": {},
+      "next_event": null
+    },
+    {
+      "id": "classroom_forgot_notes",
+      "title": "忘带笔记",
+      "description": "老师开始讲上节课延伸内容，你才发现自己的笔记本落在宿舍。",
+      "condition": {},
+      "choices": [
+        {
+          "text": "借同学笔记看",
+          "effects": {
+            "relationship": 2,
+            "knowledge": 2,
+            "mood": -1
+          },
+          "next_event": null
+        },
+        {
+          "text": "靠记忆硬听",
+          "effects": {
+            "knowledge": -3,
+            "mood": -3
+          },
+          "next_event": null
+        }
+      ],
+      "weight": 0.65,
+      "periodWeights": {
+        "上午": 0.25,
+        "下午": 0.25,
+        "晚上": 0.1
+      },
+      "cooldownMs": 180000,
+      "location": "classroom",
+      "effects": {},
+      "next_event": null
+    },
+    {
+      "id": "accident_exam",
+      "title": "意外考试",
+      "description": "老师突然宣布进行一次小测，你没有做好准备。",
+      "condition": {},
+      "choices": [
+        {
+          "text": "临时抱佛脚",
+          "effects": {
+            "relationship": -1,
+            "knowledge": 3,
+            "mood": -2
+          },
+          "next_event": null
+        },
+        {
+          "text": "会赢的！！！",
+          "effects": {
+            "knowledge": 0,
+            "mood": 5
+          },
+          "next_event": null
+        }
+      ],
+      "weight": 0.65,
+      "periodWeights": {
+        "上午": 0.25,
+        "下午": 0.25,
+        "晚上": 0.1
+      },
+      "cooldownMs": 180000,
+      "location": "classroom",
+      "effects": {},
+      "next_event": null
     }
   ]
 }

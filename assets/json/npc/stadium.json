@@ -4,14 +4,16 @@
     {
       "id": "coach",
       "name": "体育老师",
-      "x": 260,
-      "y": 470,
+      "x": 305,
+      "y": 640,
+      "image": "assets/image/coach.png",
+      "imageScale": 0.076,
       "color": "#2a9d65",
       "interactionRange": 95,
       "spawnRate": {
-        "上午": 0.75,
-        "下午": 0.8,
-        "晚上": 0.35
+        "上午": 1,
+        "下午": 1,
+        "晚上": 1
       },
       "size": {
         "width": 32,
@@ -19,14 +21,19 @@
       },
       "dialogues": [
         "运动不用一下子很强，稳定出现就很不错。",
-        "跑累了就走一圈，别把锻炼变成压力。"
-      ]
+        "跑累了就走一圈，别把锻炼变成压力。",
+        "多来找我聊聊，也许会慢慢解锁新的校园故事。"
+      ],
+      "keyNpc": true,
+      "dialogueFavor": 2
     },
     {
       "id": "runner",
       "name": "夜跑同学",
-      "x": 480,
-      "y": 500,
+      "x": 520,
+      "y": 710,
+      "image": "assets/image/runner.png",
+      "imageScale": 0.08,
       "color": "#d94f70",
       "interactionRange": 85,
       "spawnRate": {
@@ -46,8 +53,10 @@
     {
       "id": "basketball_student",
       "name": "篮球同学",
-      "x": 650,
-      "y": 390,
+      "x": 470,
+      "y": 435,
+      "image": "assets/image/basketball_student.png",
+      "imageScale": 0.078,
       "color": "#e6a23c",
       "interactionRange": 85,
       "spawnRate": {
@@ -62,27 +71,6 @@
       "dialogues": [
         "下午打一会儿球，整个人都清醒了。",
         "要不要投几个篮？不计分，只放松。"
-      ]
-    },
-    {
-      "id": "stretching_student",
-      "name": "拉伸同学",
-      "x": 790,
-      "y": 500,
-      "color": "#6f87d8",
-      "interactionRange": 85,
-      "spawnRate": {
-        "上午": 0.4,
-        "下午": 0.55,
-        "晚上": 0.7
-      },
-      "size": {
-        "width": 30,
-        "height": 42
-      },
-      "dialogues": [
-        "运动前后拉伸一下，第二天会轻松很多。",
-        "身体状态也会影响心情。"
       ]
     }
   ]

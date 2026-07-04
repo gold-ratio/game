@@ -1,5 +1,6 @@
 {
-  "advanceOnEventComplete": true,
+  "advanceOnEventComplete": false,
+  "realTimeDayMs": 480000,
   "debugAdvanceKey": "T",
   "dayEndMessage": "一天结束，进入第二天。",
   "allowance": {

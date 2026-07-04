@@ -2,6 +2,7 @@
   "id": "stadium",
   "name": "体育场",
   "backgroundColor": "#1d5f3c",
+  "backgroundImage": "assets/image/stadium.png",
   "world": {
     "width": 1400,
     "height": 960
@@ -18,57 +19,84 @@
   },
   "obstacles": [
     {
-      "id": "basketball-area",
-      "name": "篮球区占位",
-      "x": 420,
-      "y": 390,
-      "width": 520,
-      "height": 360,
-      "color": "#2d8a54"
-    },
-    {
-      "id": "badminton-area",
-      "name": "羽毛球区占位",
-      "x": 980,
-      "y": 390,
-      "width": 520,
-      "height": 360,
-      "color": "#348f6a"
-    },
-    {
       "id": "basketball-hoop-left",
       "name": "篮球架A占位",
-      "x": 170,
-      "y": 390,
-      "width": 60,
-      "height": 130,
+      "x": 195,
+      "y": 425,
+      "width": 55,
+      "height": 135,
       "color": "#16472f"
     },
     {
       "id": "basketball-hoop-right",
       "name": "篮球架B占位",
-      "x": 670,
-      "y": 390,
-      "width": 60,
-      "height": 130,
+      "x": 710,
+      "y": 425,
+      "width": 55,
+      "height": 135,
       "color": "#16472f"
     },
     {
       "id": "badminton-net",
       "name": "羽毛球网占位",
-      "x": 980,
-      "y": 390,
-      "width": 40,
-      "height": 350,
+      "x": 1010,
+      "y": 410,
+      "width": 34,
+      "height": 330,
       "color": "#16472f"
     },
     {
       "id": "equipment",
       "name": "器材区占位",
-      "x": 1210,
-      "y": 730,
-      "width": 160,
-      "height": 90,
+      "x": 1170,
+      "y": 700,
+      "width": 165,
+      "height": 100,
+      "color": "#16472f"
+    },
+    {
+      "id": "top-stand",
+      "name": "看台占位",
+      "x": 700,
+      "y": 125,
+      "width": 380,
+      "height": 120,
+      "color": "#16472f"
+    },
+    {
+      "id": "left-shelter-bench",
+      "name": "左上休息棚占位",
+      "x": 255,
+      "y": 150,
+      "width": 185,
+      "height": 80,
+      "color": "#16472f"
+    },
+    {
+      "id": "right-shelter-bench",
+      "name": "右上休息棚占位",
+      "x": 1150,
+      "y": 150,
+      "width": 185,
+      "height": 80,
+      "color": "#16472f"
+    },
+    {
+      "id": "bottom-left-bench",
+      "name": "左下长椅占位",
+      "x": 225,
+      "y": 805,
+      "width": 165,
+      "height": 55,
+      "color": "#16472f"
+    },
+    {
+      "id": "bottom-right-bench",
+      "name": "右下长椅占位",
+      "x": 1180,
+      "y": 805,
+      "width": 165,
+      "height": 55,
       "color": "#16472f"
     }
   ],
@@ -82,8 +110,40 @@
       "height": 46,
       "color": "#ffffff",
       "targetScene": "CampusScene",
-      "targetSpawn": "from-campus"
+      "targetSpawn": "from-stadium"
     }
   ],
-  "description": "体育场地图占位，分为篮球区和羽毛球区。"
+  "description": "体育场地图占位，分为篮球区和羽毛球区。",
+  "interactions": [
+    {
+      "id": "running_track",
+      "label": "跑道",
+      "x": 520,
+      "y": 710,
+      "width": 170,
+      "height": 130,
+      "color": "#9ed36a",
+      "eventId": "stadium_run_track"
+    },
+    {
+      "id": "basketball_court",
+      "label": "篮球场",
+      "x": 470,
+      "y": 435,
+      "width": 170,
+      "height": 130,
+      "color": "#ff8a3d",
+      "eventId": "stadium_basketball_chain_start"
+    },
+    {
+      "id": "coach_area",
+      "label": "体育老师",
+      "x": 305,
+      "y": 640,
+      "width": 150,
+      "height": 120,
+      "color": "#5fb7ff",
+      "eventId": "stadium_coach_chain_start"
+    }
+  ]
 }

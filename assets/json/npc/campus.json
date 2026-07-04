@@ -3,15 +3,17 @@
   "npcs": [
     {
       "id": "club_senior",
-      "name": "社团学长",
-      "x": 680,
-      "y": 520,
+      "name": "社团学姐",
+      "x": 765,
+      "y": 535,
+      "image": "assets/image/shetuan.png",
+      "imageScale": 0.097,
       "color": "#d94848",
       "interactionRange": 90,
       "spawnRate": {
-        "上午": 0.55,
-        "下午": 0.9,
-        "晚上": 0.35
+        "上午": 1,
+        "下午": 1,
+        "晚上": 1
       },
       "size": {
         "width": 30,
@@ -19,20 +21,25 @@
       },
       "dialogues": [
         "今天广场上有很多社团活动，随便逛逛也会有收获。",
-        "如果你想提升社交，可以多和不同地点的人聊聊。"
-      ]
+        "如果你想提升社交，可以多和不同地点的人聊聊。",
+        "多来找我聊聊，也许会慢慢解锁新的校园故事。"
+      ],
+      "keyNpc": true,
+      "dialogueFavor": 2
     },
     {
       "id": "lost_freshman",
       "name": "迷路新生",
-      "x": 920,
-      "y": 560,
+      "x": 845,
+      "y": 575,
+      "image": "assets/image/xinsheng.png",
+      "imageScale": 0.091,
       "color": "#ff8a3d",
       "interactionRange": 85,
       "spawnRate": {
-        "上午": 0.7,
-        "下午": 0.5,
-        "晚上": 0.2
+        "上午": 1,
+        "下午": 1,
+        "晚上": 1
       },
       "size": {
         "width": 30,
@@ -40,14 +47,19 @@
       },
       "dialogues": [
         "请问图书馆怎么走？我地图看得有点晕。",
-        "校园比我想象中大好多。"
-      ]
+        "校园比我想象中大好多。",
+        "多来找我聊聊，也许会慢慢解锁新的校园故事。"
+      ],
+      "keyNpc": true,
+      "dialogueFavor": 2
     },
     {
       "id": "delivery_student",
       "name": "取快递同学",
-      "x": 520,
-      "y": 780,
+      "x": 505,
+      "y": 860,
+      "image": "assets/image/kuaidi.png",
+      "imageScale": 0.093,
       "color": "#3aa6b9",
       "interactionRange": 85,
       "spawnRate": {
@@ -62,27 +74,6 @@
       "dialogues": [
         "快递点排队好长，不过拿到包裹还是很开心。",
         "校园里的小事也能让一天变得具体。"
-      ]
-    },
-    {
-      "id": "evening_walker",
-      "name": "散步同学",
-      "x": 1080,
-      "y": 720,
-      "color": "#7c6ee6",
-      "interactionRange": 85,
-      "spawnRate": {
-        "上午": 0.2,
-        "下午": 0.45,
-        "晚上": 0.85
-      },
-      "size": {
-        "width": 30,
-        "height": 42
-      },
-      "dialogues": [
-        "晚上走一走，脑子会清楚很多。",
-        "校园的灯亮起来以后，感觉完全不一样。"
       ]
     }
   ]

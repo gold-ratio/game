@@ -14,5 +14,10 @@
     "knowledge": 20,
     "mood": 70,
     "relationship": 30
-  }
+  },
+  "flags": {},
+  "npcFavor": {},
+  "progress": {},
+  "eventCooldowns": {},
+  "dayStartedAt": 0
 }

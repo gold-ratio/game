@@ -4,14 +4,16 @@
     {
       "id": "roommate",
       "name": "室友",
-      "x": 360,
-      "y": 360,
+      "x": 610,
+      "y": 455,
+      "image": "assets/image/roommate.png",
+      "imageScale": 0.078,
       "color": "#8e5cf0",
       "interactionRange": 90,
       "spawnRate": {
-        "上午": 0.85,
-        "下午": 0.35,
-        "晚上": 0.95
+        "上午": 1,
+        "下午": 1,
+        "晚上": 1
       },
       "size": {
         "width": 30,
@@ -19,14 +21,19 @@
       },
       "dialogues": [
         "早八真的很考验意志力。",
-        "不过宿舍整理干净以后，心情确实会好一点。"
-      ]
+        "不过宿舍整理干净以后，心情确实会好一点。",
+        "多来找我聊聊，也许会慢慢解锁新的校园故事。"
+      ],
+      "keyNpc": true,
+      "dialogueFavor": 2
     },
     {
       "id": "sleepy_student",
       "name": "赖床同学",
-      "x": 230,
-      "y": 420,
+      "x": 325,
+      "y": 445,
+      "image": "assets/image/sleepy_student.png",
+      "imageScale": 0.08,
       "color": "#f06f8f",
       "interactionRange": 80,
       "spawnRate": {
@@ -46,8 +53,10 @@
     {
       "id": "study_roommate",
       "name": "自习室友",
-      "x": 720,
-      "y": 360,
+      "x": 840,
+      "y": 435,
+      "image": "assets/image/study_roommate.png",
+      "imageScale": 0.076,
       "color": "#4b9be8",
       "interactionRange": 85,
       "spawnRate": {
@@ -67,8 +76,10 @@
     {
       "id": "game_roommate",
       "name": "游戏室友",
-      "x": 610,
-      "y": 470,
+      "x": 700,
+      "y": 625,
+      "image": "assets/image/game_roommate.png",
+      "imageScale": 0.078,
       "color": "#22a66f",
       "interactionRange": 85,
       "spawnRate": {

@@ -4,8 +4,10 @@
     {
       "id": "cafeteria_auntie",
       "name": "食堂阿姨",
-      "x": 480,
-      "y": 210,
+      "x": 520,
+      "y": 260,
+      "image": "assets/image/cafeteria_auntie.png",
+      "imageScale": 0.085,
       "color": "#c65f1e",
       "interactionRange": 95,
       "spawnRate": {
@@ -25,8 +27,10 @@
     {
       "id": "hungry_student",
       "name": "饥饿同学",
-      "x": 310,
-      "y": 260,
+      "x": 305,
+      "y": 270,
+      "image": "assets/image/hungry_student.png",
+      "imageScale": 0.076,
       "color": "#d94f70",
       "interactionRange": 80,
       "spawnRate": {
@@ -46,8 +50,10 @@
     {
       "id": "budget_student",
       "name": "省钱同学",
-      "x": 660,
-      "y": 260,
+      "x": 745,
+      "y": 270,
+      "image": "assets/image/budget_student.png",
+      "imageScale": 0.087,
       "color": "#4ca66a",
       "interactionRange": 80,
       "spawnRate": {
@@ -67,8 +73,10 @@
     {
       "id": "late_dinner_student",
       "name": "晚饭同学",
-      "x": 730,
-      "y": 460,
+      "x": 735,
+      "y": 455,
+      "image": "assets/image/late_dinner_student.png",
+      "imageScale": 0.087,
       "color": "#6f87d8",
       "interactionRange": 80,
       "spawnRate": {
